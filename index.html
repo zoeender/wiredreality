@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex Rivera — Design, Photography, Writing</title>
+<meta name="description" content="Portfolio of Alex Rivera: design, photography, and writing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================
+  BROWSER CHROME BAR — decorative header strip
+  EDIT: change "alexrivera.com" to your name / domain
+============================================= -->
+<div class="browser-chrome">
+  <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="url-bar">alexrivera.com</div>
+</div>
+
+<!-- ============================================
+  NAV — the tab bar. Links point to section IDs below.
+  You usually won't need to change this.
+============================================= -->
+<nav class="tab-nav">
+  <div class="tab-nav-inner">
+    <a href="#work" class="tab">work</a>
+    <a href="#about" class="tab">about</a>
+    <a href="#writing" class="tab">writing</a>
+    <a href="#contact" class="tab">contact</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============================================
+    HERO — first thing people see.
+    EDIT: name, tagline, availability line, city
+  ============================================= -->
+  <section class="hero">
+    <p class="status-line"><span class="dot-live" aria-hidden="true"></span>available for freelance — based in Chicago, IL</p>
+    <h1>Alex Rivera</h1>
+    <p class="hero-tagline">Design, photography, and writing that don't sit still.</p>
+  </section>
+
+  <!-- ============================================
+    WORK — grid of "window" project cards.
+    EDIT: swap the placeholder colored blocks for <img src="..."> tags,
+    change titles/descriptions/tags. Copy a whole .window-card block
+    to add more projects.
+  ============================================= -->
+  <section id="work" class="section">
+    <h2 class="section-heading">work</h2>
+
+    <div class="window-grid">
+
+      <article class="window-card">
+        <div class="window-titlebar">
+          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
+          <span class="wtitle">brand-refresh.fig</span>
+        </div>
+        <div class="window-body">
+          <div class="thumb thumb-a"></div>
+          <p class="tag">design</p>
+          <h3>Northline Coffee — brand refresh</h3>
+          <p>Full identity redesign for a three-location roastery: mark, packaging, and a menu system built to survive a busy counter.</p>
+        </div>
+      </article>
+
+      <article class="window-card">
+        <div class="window-titlebar">
+          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
+          <span class="wtitle">low-tide.jpg</span>
+        </div>
+        <div class="window-body">
+          <div class="thumb thumb-b"></div>
+          <p class="tag">photography</p>
+          <h3>Low Tide, a series</h3>
+          <p>Medium-format shots taken along the Lake Michigan shoreline over one winter, printed as a limited zine.</p>
+        </div>
+      </article>
+
+      <article class="window-card">
+        <div class="window-titlebar">
+          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
+          <span class="wtitle">signal-app.sketch</span>
+        </div>
+        <div class="window-body">
+          <div class="thumb thumb-c"></div>
+          <p class="tag">design</p>
+          <h3>Signal — transit companion app</h3>
+          <p>End-to-end UX for a real-time transit app, from onboarding flow to a component library used by the client's team.</p>
+        </div>
+      </article>
+
+      <article class="window-card">
+        <div class="window-titlebar">
+          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
+          <span class="wtitle">portraits-vol2.jpg</span>
+        </div>
+        <div class="window-body">
+          <div class="thumb thumb-d"></div>
+          <p class="tag">photography</p>
+          <h3>Portraits, Vol. 2</h3>
+          <p>A studio portrait series exploring color gels and hard shadow, shot for a local theatre company's season announcement.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================================
+    ABOUT — bio + "properties panel" stat list.
+    EDIT: bio paragraph and the property values
+  ============================================= -->
+  <section id="about" class="section">
+    <h2 class="section-heading">about</h2>
+    <div class="about-grid">
+      <div class="about-photo" aria-hidden="true"></div>
+      <div class="about-copy">
+        <p>I'm a designer, photographer, and writer working out of Chicago. Most projects start with a question I can't stop turning over — what does a coffee shop's ten-year-old regular think when the cups change? What does a street look like at the one hour of day nobody photographs it? I like work that answers those questions plainly.</p>
+        <p>Previously: in-house designer at a transit startup, freelance photographer for local publications, and a very long stint writing show notes nobody read.</p>
+
+        <dl class="properties">
+          <div><dt>Type</dt><dd>Designer / Photographer / Writer</dd></div>
+          <div><dt>Based in</dt><dd>Chicago, IL</dd></div>
+          <div><dt>Tools</dt><dd>Figma, a 35mm camera, a notebook</dd></div>
+          <div><dt>Status</dt><dd>Open to work</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+    WRITING — file-listing style list.
+    EDIT: titles, dates, excerpts. Link href="#" to real posts/PDFs.
+  ============================================= -->
+  <section id="writing" class="section">
+    <h2 class="section-heading">writing</h2>
+    <ul class="file-list">
+      <li>
+        <a href="#">
+          <span class="file-icon">txt</span>
+          <span class="file-main">
+            <span class="file-name">On slowing down a design review</span>
+            <span class="file-excerpt">Why the best feedback sessions I've run felt too slow at the time.</span>
+          </span>
+          <span class="file-date">2026.03</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="file-icon">txt</span>
+          <span class="file-main">
+            <span class="file-name">Shooting film in a digital client's world</span>
+            <span class="file-excerpt">Notes on pitching analog photography to clients who expect a same-day turnaround.</span>
+          </span>
+          <span class="file-date">2025.11</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="file-icon">txt</span>
+          <span class="file-main">
+            <span class="file-name">A defense of the boring logo</span>
+            <span class="file-excerpt">Most brand marks don't need to be clever. They need to survive being small.</span>
+          </span>
+          <span class="file-date">2025.07</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============================================
+    CONTACT — EDIT: email address, social links
+  ============================================= -->
+  <section id="contact" class="section contact-section">
+    <h2 class="section-heading">contact</h2>
+    <p class="contact-copy">Have a project in mind, or just want to say hi?</p>
+    <a class="contact-email" href="mailto:hello@alexrivera.com">hello@alexrivera.com</a>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Are.na</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================
+  FOOTER — scrolling marquee. EDIT: the marquee text and email.
+============================================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>say hello — hello@alexrivera.com — say hello — hello@alexrivera.com — say hello — hello@alexrivera.com —&nbsp;</span>
+    <span>say hello — hello@alexrivera.com — say hello — hello@alexrivera.com — say hello — hello@alexrivera.com —&nbsp;</span>
+  </div>
+</div>
+<footer class="site-footer">
+  <p>last updated 2026 · built with Cloudflare Pages</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
