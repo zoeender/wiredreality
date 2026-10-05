@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitcount+Ink:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 /* ==================================================
    TOKENS — Windows 98 palette (change to re-theme)
@@ -19,6 +20,7 @@
 
   --font-display: "Bitcount Ink", Tahoma, "MS Sans Serif", Arial, sans-serif;
   --font-body: Tahoma, "MS Sans Serif", "Segoe UI", Arial, sans-serif;
+  --font-heading: "Ubuntu", Tahoma, "MS Sans Serif", Arial, sans-serif;
   --font-mono: "Courier New", Courier, monospace;
 
   /* 98.css-style bevels (drawn with inset shadows) */
@@ -310,6 +312,8 @@ section {
 }
 
 .window-body h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 17px;
   margin-bottom: 6px;
 }
