@@ -692,3 +692,15 @@ a:focus-visible {
 }
 
 .card-link .window-card { height: 100%; }
+
+/* Fit whole photos inside the teal frames */
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;      /* the frame shape */
+  object-fit: contain;        /* show the entire photo, no cropping */
+  background: var(--teal);    /* teal shows around the photo */
+  padding: 6px;               /* little margin inside the frame */
+  box-shadow: var(--bevel-in);
+}
