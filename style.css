@@ -1,23 +1,35 @@
 /* ==================================================
-   TOKENS — change these to re-theme the entire site
+   TOKENS — Windows 98 palette (change to re-theme)
 ================================================== */
 :root {
-  --cream: #F4F1E8;
-  --paper: #FBFAF6;
-  --ink: #16151C;
-  --ink-soft: #55536A;
-  --blue: #2A39E0;
-  --pink: #FF3FA4;
-  --lilac: #E4DFFF;
-  --lime: #C8FF4D;
+  --teal: #008080;      /* desktop */
+  --gray: #c0c0c0;      /* window / button face */
+  --gray-light: #dfdfdf;
+  --gray-dark: #808080;
+  --white: #ffffff;
+  --black: #0a0a0a;
+  --navy: #000080;      /* title bar start / selection */
+  --sky: #1084d0;       /* title bar end */
+  --link: #0000ee;
+  --green: #00c000;
 
-  --font-display: 'Bitcount Ink', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-mono: 'Bitcount Ink', monospace;
+  --title-grad: linear-gradient(90deg, var(--navy), var(--sky));
 
-  --border: 2px solid var(--ink);
-  --shadow-hard: 4px 4px 0 var(--ink);
-  --shadow-hard-sm: 3px 3px 0 var(--ink);
+  --font-display: Tahoma, "MS Sans Serif", "Segoe UI", Arial, sans-serif;
+  --font-body: Tahoma, "MS Sans Serif", "Segoe UI", Arial, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+
+  /* 98.css-style bevels (drawn with inset shadows) */
+  --bevel-out:
+    inset -1px -1px var(--black),
+    inset 1px 1px var(--white),
+    inset -2px -2px var(--gray-dark),
+    inset 2px 2px var(--gray-light);
+  --bevel-in:
+    inset -1px -1px var(--white),
+    inset 1px 1px var(--gray-dark),
+    inset -2px -2px var(--gray-light),
+    inset 2px 2px var(--black);
 }
 
 * { box-sizing: border-box; }
@@ -26,173 +38,197 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--cream);
-  color: var(--ink);
+  padding-bottom: 52px; /* room for the fixed taskbar */
+  background: var(--teal);
+  color: #000;
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 h1, h2, h3 {
   font-family: var(--font-display);
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 a { color: inherit; }
 
+/* Every <section> is a Win98 window */
 section {
+  width: calc(100% - 32px);
   max-width: 1040px;
-  margin: 0 auto;
-  padding: 0 24px;
+  margin: 24px auto;
+  background: var(--gray);
+  box-shadow: var(--bevel-out);
 }
 
 /* ==================================================
-   BROWSER CHROME BAR
+   BROWSER CHROME BAR  (toolbar + address field)
 ================================================== */
 .browser-chrome {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 10px 16px;
-  background: var(--ink);
-  color: var(--cream);
+  gap: 8px;
+  padding: 5px 8px;
+  background: var(--gray);
+  color: #000;
+  box-shadow: inset 0 -1px var(--gray-dark), inset 0 1px var(--white);
 }
 
-.dots { display: flex; gap: 6px; }
+.dots { display: flex; gap: 3px; }
 .dots span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--cream);
-  opacity: 0.85;
+  width: 16px;
+  height: 14px;
+  background: var(--gray);
+  box-shadow: var(--bevel-out);
 }
-.dots span:nth-child(1) { background: var(--pink); }
-.dots span:nth-child(2) { background: var(--lime); }
-.dots span:nth-child(3) { background: var(--lilac); }
+.dots span:nth-child(n) { opacity: 1; } /* reset any inherited tints */
 
 .url-bar {
+  flex: 1;
   font-family: var(--font-mono);
   font-size: 13px;
-  background: rgba(244,241,232,0.1);
-  border: 1px solid rgba(244,241,232,0.35);
-  border-radius: 4px;
-  padding: 3px 12px;
+  background: var(--white);
+  color: #000;
+  border: none;
+  border-radius: 0;
+  padding: 3px 8px;
+  box-shadow: var(--bevel-in);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* ==================================================
-   TAB NAV
+   TAB NAV → TASKBAR (fixed to bottom of screen)
 ================================================== */
 .tab-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: var(--cream);
-  border-bottom: var(--border);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  z-index: 20;
+  background: var(--gray);
+  border: none;
+  box-shadow: inset 0 1px var(--white), inset 0 2px var(--gray-light);
 }
 
 .tab-nav-inner {
-  max-width: 1040px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
   display: flex;
+  align-items: center;
   gap: 4px;
-  padding: 12px 24px 0;
+  padding: 5px 6px;
   overflow-x: auto;
 }
 
-.tab {
-  font-family: var(--font-mono);
+/* "Start" button */
+.tab-nav-inner::before {
+  content: "⊞ Start";
+  font-family: var(--font-body);
   font-size: 13px;
-  text-decoration: none;
-  color: var(--ink-soft);
-  padding: 8px 18px;
-  border: var(--border);
-  border-bottom: none;
-  border-radius: 6px 6px 0 0;
-  background: var(--paper);
+  font-weight: 700;
+  padding: 5px 12px;
+  margin-right: 6px;
+  background: var(--gray);
+  box-shadow: var(--bevel-out);
   white-space: nowrap;
-  transform: translateY(2px);
-  transition: transform 0.15s ease, color 0.15s ease;
 }
 
-.tab:hover,
-.tab:focus-visible {
-  color: var(--ink);
-  transform: translateY(0);
-  background: var(--lilac);
+.tab {
+  font-family: var(--font-body);
+  font-size: 13px;
+  text-decoration: none;
+  color: #000;
+  padding: 5px 16px;
+  min-width: 90px;
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  background: var(--gray);
+  box-shadow: var(--bevel-out);
+  white-space: nowrap;
+  transform: none;
+  transition: none;
 }
+
+.tab:hover { background: var(--gray-light); transform: none; color: #000; }
+
+.tab:active,
+.tab:focus-visible {
+  background: repeating-conic-gradient(var(--gray) 0 25%, var(--white) 0 50%) 0 0 / 2px 2px;
+  box-shadow: var(--bevel-in);
+  color: #000;
+  transform: none;
+}
+
+/* ==================================================
+   WINDOW TITLE BARS (hero + every section heading)
+================================================== */
+.hero,
+.section {
+  padding: 3px 27px 32px;
+}
+
+.hero::before,
+.section-heading {
+  display: block;
+  margin: 0 -24px 24px;
+  padding: 4px 8px;
+  background: var(--title-grad);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0;
+  border: none;
+}
+
+.hero::before { content: "Home"; }
 
 /* ==================================================
    HERO
 ================================================== */
-.hero {
-  padding-top: 72px;
-  padding-bottom: 56px;
-}
+.hero { padding-bottom: 40px; }
 
 .status-line {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 13px;
-  color: var(--ink-soft);
-  display: flex;
+  color: #000;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   margin: 0 0 20px;
+  padding: 3px 10px;
+  background: var(--gray);
+  box-shadow: var(--bevel-in);
 }
 
 .dot-live {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--lime);
-  border: 1px solid var(--ink);
+  width: 10px;
+  height: 10px;
+  border-radius: 0;
+  background: var(--green);
+  border: 1px solid #000;
   display: inline-block;
 }
 
 .hero h1 {
-  font-size: clamp(48px, 9vw, 96px);
+  font-size: clamp(36px, 7vw, 72px);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  color: var(--navy);
 }
 
 .hero-tagline {
-  font-size: clamp(18px, 2.4vw, 24px);
-  color: var(--ink-soft);
-  max-width: 34ch;
-  margin: 18px 0 0;
-}
-
-/* ==================================================
-   SECTION HEADINGS
-================================================== */
-.section { padding: 56px 24px; }
-
-.section-heading {
-  font-family: bitcount-ink(--font-mono);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ink-soft);
-  margin: 0 0 28px;
-  padding-bottom: 10px;
-  border-bottom: 1px dashed var(--ink-soft);
-   
-.bitcount-ink-<uniquifier> {
-  font-family: "Bitcount Ink", system-ui;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "slnt" 0,
-    "CRSV" 0.5,
-    "ELSH" 0,
-    "ELXP" 0,
-    "SZP1" 0,
-    "SZP2" 0,
-    "XPN1" 0,
-    "XPN2" 0,
-    "YPN1" 0,
-    "YPN2" 0;
-}
+  font-size: clamp(15px, 2vw, 18px);
+  color: #000;
+  max-width: 48ch;
+  margin: 16px 0 0;
 }
 
 /* ==================================================
@@ -201,80 +237,84 @@ section {
 .window-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 24px;
 }
 
 .window-card {
-  background: var(--paper);
-  border: var(--border);
-  border-radius: 8px;
-  box-shadow: var(--shadow-hard);
+  background: var(--gray);
+  border: none;
+  border-radius: 0;
+  box-shadow: var(--bevel-out);
+  padding: 3px;
   overflow: hidden;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  transition: none;
 }
 
-.window-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--ink);
-}
+.window-card:hover { transform: none; box-shadow: var(--bevel-out); }
 
 .window-titlebar {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
-  background: var(--ink);
-  border-bottom: var(--border);
+  gap: 2px;
+  padding: 3px 4px;
+  background: var(--title-grad);
+  border: none;
+}
+
+/* title text first, control buttons on the right */
+.wtitle {
+  order: -1;
+  flex: 1;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--white);
+  opacity: 1;
 }
 
 .wdot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--cream);
-  opacity: 0.5;
+  width: 16px;
+  height: 14px;
+  border-radius: 0;
+  background: var(--gray);
+  box-shadow: var(--bevel-out);
+  opacity: 1;
 }
 
-.wtitle {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--cream);
-  margin-left: 8px;
-  opacity: 0.8;
-}
-
-.window-body { padding: 18px; }
+.window-body { padding: 14px; }
 
 .thumb {
   width: 100%;
   aspect-ratio: 16 / 10;
-  border: 1px solid var(--ink);
-  border-radius: 4px;
+  border: none;
+  border-radius: 0;
   margin-bottom: 14px;
+  box-shadow: var(--bevel-in);
   /* REPLACE these gradient blocks with real images:
      <img src="images/your-photo.jpg" alt="..."> */
 }
 
-.thumb-a { background: linear-gradient(135deg, var(--blue), var(--lilac)); }
-.thumb-b { background: linear-gradient(135deg, #7A8CFF, #1B2A99); }
-.thumb-c { background: linear-gradient(135deg, var(--pink), var(--lilac)); }
-.thumb-d { background: linear-gradient(135deg, #FF7AC8, #8E2A6B); }
+.thumb-a { background: linear-gradient(135deg, var(--navy), var(--teal)); }
+.thumb-b { background: linear-gradient(135deg, var(--teal), var(--gray)); }
+.thumb-c { background: linear-gradient(135deg, #800080, var(--gray)); }
+.thumb-d { background: linear-gradient(135deg, #808000, #ffff80); }
 
 .tag {
   font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--blue);
-  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--navy);
+  margin: 0 0 6px;
 }
 
 .window-body h3 {
-  font-size: 19px;
-  margin-bottom: 8px;
+  font-size: 17px;
+  margin-bottom: 6px;
 }
 
 .window-body p:not(.tag) {
-  color: var(--ink-soft);
-  font-size: 14.5px;
+  color: #000;
+  font-size: 13.5px;
   margin: 0;
 }
 
@@ -284,157 +324,189 @@ section {
 .about-grid {
   display: grid;
   grid-template-columns: 220px 1fr;
-  gap: 40px;
+  gap: 32px;
   align-items: start;
 }
 
 .about-photo {
   aspect-ratio: 4 / 5;
-  border: var(--border);
-  border-radius: 8px;
-  box-shadow: var(--shadow-hard-sm);
-  background: linear-gradient(160deg, var(--lilac), var(--pink));
+  border: none;
+  border-radius: 0;
+  box-shadow: var(--bevel-in);
+  background: linear-gradient(160deg, var(--teal), var(--navy));
   /* REPLACE with: background: url('images/you.jpg') center/cover; */
 }
 
 .about-copy p {
-  color: var(--ink-soft);
+  color: #000;
   max-width: 62ch;
 }
 
 .properties {
-  margin: 28px 0 0;
-  border: var(--border);
-  border-radius: 8px;
+  margin: 24px 0 0;
+  border: none;
+  border-radius: 0;
   overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--bevel-in);
 }
 
 .properties div {
   display: grid;
   grid-template-columns: 120px 1fr;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid var(--gray-dark);
 }
 
 .properties div:last-child { border-bottom: none; }
 
 .properties dt {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 12px;
-  color: var(--ink-soft);
-  padding: 10px 14px;
-  background: var(--lilac);
-  border-right: 1px solid var(--ink);
+  font-weight: 700;
+  color: #000;
+  padding: 8px 12px;
+  background: var(--gray);
+  border-right: 1px solid var(--gray-dark);
 }
 
 .properties dd {
   margin: 0;
-  padding: 10px 14px;
-  font-size: 14px;
-  background: var(--paper);
+  padding: 8px 12px;
+  font-size: 13.5px;
+  background: var(--white);
 }
 
 /* ==================================================
-   WRITING — file list
+   WRITING — Explorer-style file list
 ================================================== */
 .file-list {
   list-style: none;
   margin: 0;
-  padding: 0;
-  border: var(--border);
-  border-radius: 8px;
-  overflow: hidden;
+  padding: 2px;
+  background: var(--white);
+  border: none;
+  border-radius: 0;
+  box-shadow: var(--bevel-in);
 }
 
-.file-list li { border-bottom: 1px solid var(--ink); }
+.file-list li { border-bottom: 1px dotted var(--gray-dark); }
 .file-list li:last-child { border-bottom: none; }
 
 .file-list a {
   display: grid;
   grid-template-columns: 44px 1fr auto;
   align-items: center;
-  gap: 16px;
-  padding: 16px;
+  gap: 14px;
+  padding: 10px 12px;
   text-decoration: none;
-  background: var(--paper);
-  transition: background 0.15s ease;
+  background: var(--white);
+  color: #000;
+  transition: none;
 }
 
+/* Windows-style selection highlight */
 .file-list a:hover,
 .file-list a:focus-visible {
-  background: var(--lilac);
+  background: var(--navy);
+  color: var(--white);
+  outline: 1px dotted var(--white);
+  outline-offset: -3px;
 }
+
+.file-list a:hover .file-excerpt,
+.file-list a:hover .file-date,
+.file-list a:focus-visible .file-excerpt,
+.file-list a:focus-visible .file-date { color: var(--gray-light); }
 
 .file-icon {
   font-family: var(--font-mono);
   font-size: 11px;
+  color: #000;
   text-align: center;
-  border: 1px solid var(--ink);
-  border-radius: 4px;
-  padding: 6px 0;
-  background: var(--cream);
+  border: 1px solid #000;
+  border-radius: 0;
+  padding: 5px 0;
+  background: #ffffc0; /* little "document" sheet */
 }
 
-.file-main { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.file-main { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 
 .file-name {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .file-excerpt {
-  color: var(--ink-soft);
-  font-size: 13.5px;
+  color: var(--gray-dark);
+  font-size: 12.5px;
 }
 
 .file-date {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 12px;
-  color: var(--ink-soft);
+  color: var(--gray-dark);
   white-space: nowrap;
 }
 
 /* ==================================================
    CONTACT
 ================================================== */
-.contact-section { text-align: left; padding-bottom: 80px; }
+.contact-section { text-align: left; padding-bottom: 40px; }
 
 .contact-copy {
-  color: var(--ink-soft);
-  font-size: 18px;
-  margin-bottom: 18px;
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 16px;
 }
 
 .contact-email {
+  display: inline-block;
   font-family: var(--font-display);
-  font-size: clamp(28px, 5vw, 44px);
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 3px solid var(--pink);
+  font-size: clamp(22px, 4vw, 36px);
+  font-weight: 700;
+  color: var(--link);
+  text-decoration: underline;
+  border-bottom: none;
 }
+
+.contact-email:hover { color: #ff0000; }
 
 .social-links {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-top: 24px;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 13px;
 }
 
-.social-links a { text-decoration: underline; color: var(--ink-soft); }
-.social-links a:hover { color: var(--ink); }
+/* social links look like Win98 push buttons */
+.social-links a {
+  text-decoration: none;
+  color: #000;
+  padding: 5px 16px;
+  background: var(--gray);
+  box-shadow: var(--bevel-out);
+}
+
+.social-links a:hover { color: #000; background: var(--gray-light); }
+.social-links a:active { box-shadow: var(--bevel-in); }
 
 /* ==================================================
-   MARQUEE FOOTER
+   MARQUEE FOOTER → status bar ticker
 ================================================== */
 .marquee {
-  border-top: var(--border);
-  border-bottom: var(--border);
-  background: var(--ink);
-  color: var(--cream);
+  width: calc(100% - 32px);
+  max-width: 1040px;
+  margin: 24px auto 0;
+  border: none;
+  background: var(--gray);
+  color: #000;
   overflow: hidden;
   white-space: nowrap;
-  padding: 14px 0;
+  padding: 6px 0;
+  box-shadow: var(--bevel-in);
 }
 
 .marquee-track {
@@ -443,8 +515,8 @@ section {
 }
 
 .marquee-track span {
-  font-family: var(--font-mono);
-  font-size: 14px;
+  font-family: var(--font-body);
+  font-size: 13px;
   padding-right: 0;
 }
 
@@ -461,9 +533,9 @@ section {
 .site-footer {
   text-align: center;
   padding: 16px;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 12px;
-  color: var(--ink-soft);
+  color: var(--white);
 }
 
 /* ==================================================
@@ -475,10 +547,11 @@ section {
   .about-photo { max-width: 220px; }
   .file-list a { grid-template-columns: 36px 1fr; }
   .file-date { grid-column: 2; }
+  .tab { min-width: 0; padding: 5px 10px; }
 }
 
-/* Visible keyboard focus everywhere */
+/* Visible keyboard focus everywhere (Win98 dotted focus ring) */
 a:focus-visible {
-  outline: 2px solid var(--blue);
+  outline: 1px dotted #000;
   outline-offset: 2px;
 }
