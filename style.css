@@ -561,3 +561,64 @@ a:focus-visible {
   outline: 1px dotted #000;
   outline-offset: 2px;
 }
+
+/* ==================================================
+   DESKTOP ICONS (left + right of the windows)
+   Shown only when the screen is wide enough that
+   they won't overlap the centered windows.
+================================================== */
+.desktop-icons {
+  display: none;
+  position: fixed;
+  top: 72px;
+  z-index: 5;
+  flex-direction: column;
+  gap: 18px;
+  width: 92px;
+}
+
+.desktop-icons-left  { left: 12px; }
+.desktop-icons-right { right: 12px; }
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.icon-img {
+  display: block;
+  font-size: 38px;
+  line-height: 1;
+  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.5));
+  /* To use real icon images instead of emoji:
+     <span class="icon-img"><img src="images/computer.png" width="40" height="40" alt=""></span> */
+}
+
+.icon-img img { display: block; image-rendering: pixelated; }
+
+.icon-label {
+  padding: 1px 4px;
+  border: 1px dotted transparent;
+}
+
+/* "selected" look, like clicking an icon on the desktop */
+.desktop-icon:hover .icon-label,
+.desktop-icon:focus-visible .icon-label {
+  background: var(--navy);
+  color: #000;
+  border-color: #000;
+}
+
+.desktop-icon:focus-visible { outline: none; }
+
+@media (min-width: 1280px) {
+  .desktop-icons { display: flex; }
+}
