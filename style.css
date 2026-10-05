@@ -13,7 +13,7 @@
 
   --font-display: 'Bitcount Ink', sans-serif;
   --font-body: 'Inter', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-mono: 'Bitcount Ink', monospace;
 
   --border: 2px solid var(--ink);
   --shadow-hard: 4px 4px 0 var(--ink);
@@ -168,13 +168,31 @@ section {
 .section { padding: 56px 24px; }
 
 .section-heading {
-  font-family: var(--font-mono);
+  font-family: bitcount-ink(--font-mono);
   font-size: 14px;
   font-weight: 500;
   color: var(--ink-soft);
   margin: 0 0 28px;
   padding-bottom: 10px;
   border-bottom: 1px dashed var(--ink-soft);
+   
+.bitcount-ink-<uniquifier> {
+  font-family: "Bitcount Ink", system-ui;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0,
+    "SZP1" 0,
+    "SZP2" 0,
+    "XPN1" 0,
+    "XPN2" 0,
+    "YPN1" 0,
+    "YPN2" 0;
+}
 }
 
 /* ==================================================
