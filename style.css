@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Ink:wght@100..900&display=swap");
+
 /* ==================================================
    TOKENS — Windows 98 palette (change to re-theme)
 ================================================== */
@@ -8,14 +10,14 @@
   --gray-dark: #808080;
   --white: #ffffff;
   --black: #0a0a0a;
-  --navy: #000080;      /* title bar start / selection */
-  --sky: #1084d0;       /* title bar end */
+  --navy: #8EC2E6;      /* title bar / selection */
+  --sky: #8EC2E6;       /* title bar end */
   --link: #0000ee;
   --green: #00c000;
 
   --title-grad: linear-gradient(90deg, var(--navy), var(--sky));
 
-  --font-display: Tahoma, "MS Sans Serif", "Segoe UI", Arial, sans-serif;
+  --font-display: "Bitcount Ink", Tahoma, "MS Sans Serif", Arial, sans-serif;
   --font-body: Tahoma, "MS Sans Serif", "Segoe UI", Arial, sans-serif;
   --font-mono: "Courier New", Courier, monospace;
 
@@ -179,7 +181,7 @@ section {
   margin: 0 -24px 24px;
   padding: 4px 8px;
   background: var(--title-grad);
-  color: var(--white);
+  color: #000;
   font-family: var(--font-display);
   font-size: 13px;
   font-weight: 700;
@@ -218,10 +220,10 @@ section {
 }
 
 .hero h1 {
-  font-size: clamp(36px, 7vw, 72px);
+  font-size: clamp(30px, 6vw, 62px);
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--navy);
+  color: #000;
 }
 
 .hero-tagline {
@@ -269,7 +271,7 @@ section {
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 700;
-  color: var(--white);
+  color: #000;
   opacity: 1;
 }
 
@@ -303,7 +305,7 @@ section {
 .tag {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--navy);
+  color: #000;
   margin: 0 0 6px;
 }
 
@@ -408,15 +410,15 @@ section {
 .file-list a:hover,
 .file-list a:focus-visible {
   background: var(--navy);
-  color: var(--white);
-  outline: 1px dotted var(--white);
+  color: #000;
+  outline: 1px dotted #000;
   outline-offset: -3px;
 }
 
 .file-list a:hover .file-excerpt,
 .file-list a:hover .file-date,
 .file-list a:focus-visible .file-excerpt,
-.file-list a:focus-visible .file-date { color: var(--gray-light); }
+.file-list a:focus-visible .file-date { color: #333; }
 
 .file-icon {
   font-family: var(--font-mono);
