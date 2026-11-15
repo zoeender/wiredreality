@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Bitcount+Ink:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 /* ==================================================
    TOKENS — Windows 98 palette (change to re-theme)
 ================================================== */
 :root {
-  --teal: #69537d;      /* desktop */
+  --purple: #69537d;      /* desktop */
   --gray: #c0c0c0;      /* window / button face */
   --gray-light: #dfdfdf;
   --gray-dark: #808080;
@@ -43,14 +42,16 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   padding-bottom: 52px; /* room for the fixed taskbar */
-  background: var(--teal);
+  background: var(--purple);
   color: #000;
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.5;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-display);
   margin: 0;
   line-height: 1.15;
@@ -81,13 +82,16 @@ section {
 }
 
 .dots { display: flex; gap: 3px; }
+
 .dots span {
   width: 16px;
   height: 14px;
   background: var(--gray);
   box-shadow: var(--bevel-out);
 }
-.dots span:nth-child(n) { opacity: 1; } /* reset any inherited tints */
+
+.dots span:nth-child(n) { opacity: 1; }
+ /* reset any inherited tints */
 
 .url-bar {
   flex: 1;
@@ -170,14 +174,14 @@ section {
 }
 
 /* ==================================================
-   WINDOW TITLE BARS (hero + every section heading)
+   WINDOW TITLE BARS (every section heading)
 ================================================== */
-.hero,
 .section {
   padding: 3px 27px 32px;
+  scroll-margin-top: 16px;      /* keeps headings clear of the fixed taskbar */
+  scroll-margin-bottom: 60px;
 }
 
-.hero::before,
 .section-heading {
   display: block;
   margin: 0 -24px 24px;
@@ -190,49 +194,6 @@ section {
   line-height: 1.3;
   letter-spacing: 0;
   border: none;
-}
-
-.hero::before { content: "Home"; }
-
-/* ==================================================
-   HERO
-================================================== */
-.hero { padding-bottom: 40px; }
-
-.status-line {
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: #000;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 0 20px;
-  padding: 3px 10px;
-  background: var(--gray);
-  box-shadow: var(--bevel-in);
-}
-
-.dot-live {
-  width: 10px;
-  height: 10px;
-  border-radius: 0;
-  background: var(--green);
-  border: 1px solid #000;
-  display: inline-block;
-}
-
-.hero h1 {
-  font-size: clamp(30px, 6vw, 62px);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: #000;
-}
-
-.hero-tagline {
-  font-size: clamp(15px, 2vw, 18px);
-  color: #000;
-  max-width: 48ch;
-  margin: 16px 0 0;
 }
 
 /* ==================================================
@@ -299,9 +260,12 @@ section {
      <img src="images/your-photo.jpg" alt="..."> */
 }
 
-.thumb-a { background: linear-gradient(135deg, var(--navy), var(--teal)); }
-.thumb-b { background: linear-gradient(135deg, var(--teal), var(--gray)); }
+.thumb-a { background: linear-gradient(135deg, var(--navy), var(--purple)); }
+
+.thumb-b { background: linear-gradient(135deg, var(--purple), var(--gray)); }
+
 .thumb-c { background: linear-gradient(135deg, #800080, var(--gray)); }
+
 .thumb-d { background: linear-gradient(135deg, #808000, #ffff80); }
 
 .tag {
@@ -323,181 +287,6 @@ section {
   font-size: 13.5px;
   margin: 0;
 }
-
-/* ==================================================
-   ABOUT
-================================================== */
-.about-grid {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 32px;
-  align-items: start;
-}
-
-.about-photo {
-  aspect-ratio: 4 / 5;
-  border: none;
-  border-radius: 0;
-  box-shadow: var(--bevel-in);
-  background: linear-gradient(160deg, var(--teal), var(--navy));
-  /* REPLACE with: background: url('images/you.jpg') center/cover; */
-}
-
-.about-copy p {
-  color: #000;
-  max-width: 62ch;
-}
-
-.properties {
-  margin: 24px 0 0;
-  border: none;
-  border-radius: 0;
-  overflow: hidden;
-  background: var(--white);
-  box-shadow: var(--bevel-in);
-}
-
-.properties div {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  border-bottom: 1px solid var(--gray-dark);
-}
-
-.properties div:last-child { border-bottom: none; }
-
-.properties dt {
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 700;
-  color: #000;
-  padding: 8px 12px;
-  background: var(--gray);
-  border-right: 1px solid var(--gray-dark);
-}
-
-.properties dd {
-  margin: 0;
-  padding: 8px 12px;
-  font-size: 13.5px;
-  background: var(--white);
-}
-
-/* ==================================================
-   WRITING — Explorer-style file list
-================================================== */
-.file-list {
-  list-style: none;
-  margin: 0;
-  padding: 2px;
-  background: var(--white);
-  border: none;
-  border-radius: 0;
-  box-shadow: var(--bevel-in);
-}
-
-.file-list li { border-bottom: 1px dotted var(--gray-dark); }
-.file-list li:last-child { border-bottom: none; }
-
-.file-list a {
-  display: grid;
-  grid-template-columns: 44px 1fr auto;
-  align-items: center;
-  gap: 14px;
-  padding: 10px 12px;
-  text-decoration: none;
-  background: var(--white);
-  color: #000;
-  transition: none;
-}
-
-/* Windows-style selection highlight */
-.file-list a:hover,
-.file-list a:focus-visible {
-  background: var(--navy);
-  color: #000;
-  outline: 1px dotted #000;
-  outline-offset: -3px;
-}
-
-.file-list a:hover .file-excerpt,
-.file-list a:hover .file-date,
-.file-list a:focus-visible .file-excerpt,
-.file-list a:focus-visible .file-date { color: #333; }
-
-.file-icon {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: #000;
-  text-align: center;
-  border: 1px solid #000;
-  border-radius: 0;
-  padding: 5px 0;
-  background: #ffffc0; /* little "document" sheet */
-}
-
-.file-main { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-
-.file-name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.file-excerpt {
-  color: var(--gray-dark);
-  font-size: 12.5px;
-}
-
-.file-date {
-  font-family: var(--font-body);
-  font-size: 12px;
-  color: var(--gray-dark);
-  white-space: nowrap;
-}
-
-/* ==================================================
-   CONTACT
-================================================== */
-.contact-section { text-align: left; padding-bottom: 40px; }
-
-.contact-copy {
-  color: #000;
-  font-size: 16px;
-  margin-bottom: 16px;
-}
-
-.contact-email {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-size: clamp(22px, 4vw, 36px);
-  font-weight: 700;
-  color: var(--link);
-  text-decoration: underline;
-  border-bottom: none;
-}
-
-.contact-email:hover { color: #ff0000; }
-
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 24px;
-  font-family: var(--font-body);
-  font-size: 13px;
-}
-
-/* social links look like Win98 push buttons */
-.social-links a {
-  text-decoration: none;
-  color: #000;
-  padding: 5px 16px;
-  background: var(--gray);
-  box-shadow: var(--bevel-out);
-}
-
-.social-links a:hover { color: #000; background: var(--gray-light); }
-.social-links a:active { box-shadow: var(--bevel-in); }
 
 /* ==================================================
    MARQUEE FOOTER → status bar ticker
@@ -532,8 +321,9 @@ section {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none; }
-  html { scroll-behavior: auto; }
+    .marquee-track { animation: none; }
+
+    html { scroll-behavior: auto; }
 }
 
 .site-footer {
@@ -548,79 +338,15 @@ section {
    RESPONSIVE
 ================================================== */
 @media (max-width: 760px) {
-  .window-grid { grid-template-columns: 1fr; }
-  .about-grid { grid-template-columns: 1fr; }
-  .about-photo { max-width: 220px; }
-  .file-list a { grid-template-columns: 36px 1fr; }
-  .file-date { grid-column: 2; }
-  .tab { min-width: 0; padding: 5px 10px; }
+    .window-grid { grid-template-columns: 1fr; }
+
+    .tab { min-width: 0; padding: 5px 10px; }
 }
 
 /* Visible keyboard focus everywhere (Win98 dotted focus ring) */
 a:focus-visible {
   outline: 1px dotted #000;
   outline-offset: 2px;
-}
-
-/* ==================================================
-   DESKTOP ICONS (left + right of the windows)
-   Shown only when the screen is wide enough that
-   they won't overlap the centered windows.
-================================================== */
-.desktop-icons {
-  display: none;
-  position: fixed;
-  top: 72px;
-  z-index: 5;
-  flex-direction: column;
-  gap: 18px;
-  width: 92px;
-}
-
-.desktop-icons-left  { left: 12px; }
-.desktop-icons-right { right: 12px; }
-
-.desktop-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  text-align: center;
-  text-decoration: none;
-  color: var(--white);
-  font-family: var(--font-body);
-  font-size: 12px;
-  line-height: 1.2;
-}
-
-.icon-img {
-  display: block;
-  font-size: 38px;
-  line-height: 1;
-  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.5));
-  /* To use real icon images instead of emoji:
-     <span class="icon-img"><img src="images/computer.png" width="40" height="40" alt=""></span> */
-}
-
-.icon-img img { display: block; image-rendering: pixelated; }
-
-.icon-label {
-  padding: 1px 4px;
-  border: 1px dotted transparent;
-}
-
-/* "selected" look, like clicking an icon on the desktop */
-.desktop-icon:hover .icon-label,
-.desktop-icon:focus-visible .icon-label {
-  background: var(--navy);
-  color: #000;
-  border-color: #000;
-}
-
-.desktop-icon:focus-visible { outline: none; }
-
-@media (min-width: 1280px) {
-  .desktop-icons { display: flex; }
 }
 
 /* ==================================================
@@ -649,6 +375,7 @@ a:focus-visible {
 }
 
 .back-link:hover { background: var(--gray-light); }
+
 .back-link:active { box-shadow: var(--bevel-in); }
 
 .project-title {
@@ -672,13 +399,6 @@ a:focus-visible {
 
 .gallery figure { margin: 0; }
 
-.gallery img {
-  display: block;
-  width: 100%;
-  height: auto;
-  box-shadow: var(--bevel-in);
-}
-
 .gallery .thumb { margin-bottom: 0; }
 
 .gallery figcaption {
@@ -688,7 +408,7 @@ a:focus-visible {
 }
 
 @media (max-width: 760px) {
-  .gallery { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr; }
 }
 
 .card-link .window-card { height: 100%; }
@@ -700,7 +420,7 @@ a:focus-visible {
   height: auto;
   aspect-ratio: 16 / 10;      /* the frame shape */
   object-fit: contain;        /* show the entire photo, no cropping */
-  background: var(--teal);    /* teal shows around the photo */
+  background: var(--purple);    /* teal shows around the photo */
   padding: 6px;               /* little margin inside the frame */
   box-shadow: var(--bevel-in);
 }
@@ -778,12 +498,11 @@ a:focus-visible {
 
 /* Touch screens have no hover: show a faint outline so people can see what's tappable */
 @media (hover: none) {
-  .hotspot { border-color: rgba(255, 255, 255, 0.6); }
-  .hotspot-label { display: none; }
+    .hotspot { border-color: rgba(255, 255, 255, 0.6); }
+
+    .hotspot-label { display: none; }
 }
 
-/* Keep the fixed taskbar from covering section headings after a jump */
-.section { scroll-margin-top: 16px; scroll-margin-bottom: 60px; }
 
 /* ==================================================
    INNER PAGES (resume.html etc.)
@@ -818,7 +537,9 @@ a:focus-visible {
   background: var(--gray);
   box-shadow: var(--bevel-out);
 }
+
 .btn:hover { background: var(--gray-light); }
+
 .btn:active { box-shadow: var(--bevel-in); }
 
 /* ---- Resume file area ---- */
@@ -853,6 +574,7 @@ a:focus-visible {
   margin-bottom: 14px;
   border-bottom: 1px dotted var(--gray-dark);
 }
+
 .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
 .job h3 {
@@ -876,6 +598,7 @@ a:focus-visible {
 }
 
 .job ul { margin: 0; padding-left: 18px; font-size: 13.5px; }
+
 .job li { margin-bottom: 3px; }
 
 .pane-heading {
@@ -883,6 +606,7 @@ a:focus-visible {
   font-size: 15px;
   margin: 0 0 10px;
 }
+
 .pane-heading:not(:first-child) { margin-top: 24px; }
 
 .skill-list {
@@ -902,8 +626,9 @@ a:focus-visible {
 }
 
 @media (max-width: 760px) {
-  .resume-columns { grid-template-columns: 1fr; }
-  .resume-embed { height: 70vh; min-height: 420px; }
+    .resume-columns { grid-template-columns: 1fr; }
+
+    .resume-embed { height: 70vh; min-height: 420px; }
 }
 
 /* ==================================================
@@ -913,18 +638,18 @@ a:focus-visible {
 .popup-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 720px;       /* smaller windows: raise this to make them bigger */
+  gap: 12px;
+  max-width: 460px;       /* total width of the 3 x 3 block: raise to make windows bigger */
   margin: 0 auto;
 }
 
 .popup {
   display: block;
-  padding: 3px;
+  padding: 2px;
   text-decoration: none;
   color: #000;
   background: var(--gray);
-  box-shadow: var(--bevel-out), 6px 6px 0 rgba(0, 0, 0, 0.35); /* window + drop shadow */
+  box-shadow: var(--bevel-out), 4px 4px 0 rgba(0, 0, 0, 0.35); /* window + drop shadow */
   transition: transform 0.15s, box-shadow 0.15s;
 }
 
@@ -933,7 +658,9 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  width: 11px;
+  height: 10px;
+  font-size: 8px;
   font-weight: 700;
   line-height: 1;
   color: #000;
@@ -943,13 +670,13 @@ a:focus-visible {
 .popup:hover,
 .popup:focus-visible {
   transform: translate(-3px, -3px);
-  box-shadow: var(--bevel-out), 9px 9px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: var(--bevel-out), 6px 6px 0 rgba(0, 0, 0, 0.35);
   outline: none;
 }
 
 .popup:hover .window-titlebar,
 .popup:focus-visible .window-titlebar {
-  background: var(--teal);
+  background: var(--purple);
 }
 
 .popup:hover .wtitle,
@@ -963,12 +690,10 @@ a:focus-visible {
   box-shadow: var(--bevel-in);
 }
 
-.popup .window-body p:not(.tag):not(.popup-open) { margin: 0; }
-
 .popup-open {
-  margin: 12px 0 0;
+  margin: 0;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 10px;
   text-decoration: underline;
   color: var(--link);
 }
@@ -986,15 +711,21 @@ a:focus-visible {
 }
 
 @media (max-width: 520px) {
-  .popup-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .popup-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
 }
 
 /* compact window contents */
-.popup .window-body { padding: 8px; }
-.popup .thumb { margin-bottom: 8px; }
-.popup .wtitle { font-size: 11px; }
-.popup-open { margin: 0; }
+
+.popup .window-titlebar { padding: 2px 3px; gap: 1px; }
+
+
+.popup .window-body { padding: 5px; }
+
+.popup .thumb { margin-bottom: 5px; }
+
+.popup .wtitle { font-size: 9px; }
+
 
 @media (prefers-reduced-motion: reduce) {
-  .popup { transition: none; }
+    .popup { transition: none; }
 }
