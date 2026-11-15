@@ -13,40 +13,6 @@
 </head>
 <body>
 
-<!-- ============================================
-  DESKTOP ICONS — left and right of the windows.
-  EDIT: change the emoji, labels, or href targets.
-  (Only visible on screens 1280px wide or more.)
-============================================= -->
-<nav class="desktop-icons desktop-icons-left" aria-label="Desktop shortcuts">
-  <a class="desktop-icon" href="#about">
-    <span class="icon-img" aria-hidden="true">🖥️</span>
-    <span class="icon-label">My Computer</span>
-  </a>
-  <a class="desktop-icon" href="#projects">
-    <span class="icon-img" aria-hidden="true">🎨</span>
-    <span class="icon-label">Projects</span>
-  </a>
-  <a class="desktop-icon" href="#media">
-    <span class="icon-img" aria-hidden="true">📷</span>
-    <span class="icon-label">Media</span>
-  </a>
-</nav>
-
-<nav class="desktop-icons desktop-icons-right" aria-label="Desktop shortcuts">
-  <a class="desktop-icon" href="#writing">
-    <span class="icon-img" aria-hidden="true">📝</span>
-    <span class="icon-label">Writing</span>
-  </a>
-  <a class="desktop-icon" href="#resume">
-    <span class="icon-img" aria-hidden="true">📄</span>
-    <span class="icon-label">Resume</span>
-  </a>
-  <a class="desktop-icon" href="#contact">
-    <span class="icon-img" aria-hidden="true">✉️</span>
-    <span class="icon-label">Contact</span>
-  </a>
-</nav>
 
 
 <!-- ============================================
@@ -64,16 +30,18 @@
 ============================================= -->
 <nav class="tab-nav">
   <div class="tab-nav-inner">
-    <a href="#resume" class="tab">resume | cv</a>
-    <a href="#projects" class="tab">advertising</a>
-    <a href="#projects" class="tab">graphic design</a>
-    <a href="#writing" class="tab">research</a>
-    <a href="#media" class="tab">photography</a>
-    <a href="#projects" class="tab">videography</a>
+    <a href="resume.html" class="tab">resume | cv</a>
+    <a href="advertising.html" class="tab">advertising</a>
+    <a href="graphic-design.html" class="tab">graphic design</a>
+    <a href="research.html" class="tab">research</a>
+    <a href="photography.html" class="tab">photography</a>
+    <a href="videography.html" class="tab">videography</a>
   </div>
 </nav>
 
 <main>
+
+  <h1 style="position:absolute;left:-9999px;">Zoë Ender — Wired Reality</h1>
 
   <!-- ============================================
     PHOTO STAGE — portfolio1.png as the interactive "desktop".
@@ -85,297 +53,36 @@
     <img class="photo-stage-img" src="portfolio1.png" alt="A retro purple desktop with folders labeled photography, videography, research, advertising, graphic design, and resume | cv, over a cloudy hillside wallpaper" width="1920" height="1080">
 
     <!-- Row 1 of folders -->
-    <a class="hotspot" href="#media" aria-label="Photography" style="--x:27.6%; --y:25.5%; --w:12%; --h:20.5%;">
+    <a class="hotspot" href="photography.html" aria-label="Photography" style="--x:27.6%; --y:25.5%; --w:12%; --h:20.5%;">
       <span class="hotspot-label">photography</span>
     </a>
-    <a class="hotspot" href="#projects" aria-label="Videography" style="--x:44.3%; --y:25.7%; --w:12.5%; --h:20.5%;">
+    <a class="hotspot" href="videography.html" aria-label="Videography" style="--x:44.3%; --y:25.7%; --w:12.5%; --h:20.5%;">
       <span class="hotspot-label">videography</span>
     </a>
-    <a class="hotspot" href="#writing" aria-label="Research" style="--x:60.7%; --y:25.7%; --w:11.5%; --h:20.5%;">
+    <a class="hotspot" href="research.html" aria-label="Research" style="--x:60.7%; --y:25.7%; --w:11.5%; --h:20.5%;">
       <span class="hotspot-label">research</span>
     </a>
 
     <!-- Row 2 of folders -->
-    <a class="hotspot" href="#projects" aria-label="Advertising" style="--x:28.1%; --y:46.3%; --w:12.5%; --h:20.5%;">
+    <a class="hotspot" href="advertising.html" aria-label="Advertising" style="--x:28.1%; --y:46.3%; --w:12.5%; --h:20.5%;">
       <span class="hotspot-label">advertising</span>
     </a>
-    <a class="hotspot" href="#projects" aria-label="Graphic design" style="--x:44.6%; --y:46.3%; --w:12.8%; --h:20.5%;">
+    <a class="hotspot" href="graphic-design.html" aria-label="Graphic design" style="--x:44.6%; --y:46.3%; --w:12.8%; --h:20.5%;">
       <span class="hotspot-label">graphic design</span>
     </a>
 
     <!-- Row 3 -->
-    <a class="hotspot" href="#resume" aria-label="Resume and CV" style="--x:27.2%; --y:69.4%; --w:11.8%; --h:20.5%;">
+    <a class="hotspot" href="resume.html" aria-label="Resume and CV" style="--x:27.2%; --y:69.4%; --w:11.8%; --h:20.5%;">
       <span class="hotspot-label">resume | cv</span>
     </a>
 
     <!-- Extras: the pop-up window and the Start button -->
-    <a class="hotspot" href="#contact" aria-label="Contact" style="--x:74.3%; --y:59%; --w:21.5%; --h:38.5%;">
+    <a class="hotspot" href="contact.html" aria-label="Contact" style="--x:74.3%; --y:59%; --w:21.5%; --h:38.5%;">
       <span class="hotspot-label">contact</span>
     </a>
-    <a class="hotspot" href="#about" aria-label="About" style="--x:3.8%; --y:97%; --w:7.6%; --h:6%;">
+    <a class="hotspot" href="about.html" aria-label="About" style="--x:3.8%; --y:97%; --w:7.6%; --h:6%;">
       <span class="hotspot-label">about</span>
     </a>
-  </section>
-
-  <!-- ============================================
-    HERO — first thing people see.
-    EDIT: name, tagline, availability line, city
-  ============================================= -->
-  <section class="hero">
-    <p class="status-line"><span class="dot-live" aria-hidden="true"></span>digital culture specialist with interest in internet culture, ai policy, and digital ethics</p>
-    <h1>Zoë Ender</h1>
-    <p class="hero-tagline">3rd Year Digital Media Design student at the University of Connecticut</p>
-  </section>
-
-  <!-- ============================================
-    WORK — grid of "window" project cards.
-    EDIT: swap the placeholder colored blocks for <img src="..."> tags,
-    change titles/descriptions/tags. Copy a whole .window-card block
-    to add more projects.
-  ============================================= -->
-  <section id="projects" class="section">
-    <h2 class="section-heading">projects</h2>
-
-    <div class="window-grid">
-
-      <article class="window-card">
-        <div class="window-titlebar">
-          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
-          <span class="wtitle">thread_and_fur</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-a"></div>
-          <p class="tag">stop-motion animation</p>
-          <h3>Thread and Fur</h3>
-          <p>A short stop-motion animation about a cat's early morning routine, that gets interrupted by a friend.</p>
-        </div>
-      </article>
-
-      <a class="card-link" href="cybernihilism.html">
-      <article class="window-card">
-        <div class="window-titlebar">
-          <img src="molly-1.png">
-          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
-          <span class="wtitle">cybernihilism.jpg</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-b"></div>
-          <p class="tag">photography</p>
-          <h3>Cyber-nihilism</h3>
-          <p>Medium-format shots in a commentary about physically adapting to technology.</p>
-        </div>
-      </article>
-      </a>
-
-      <article class="window-card">
-        <div class="window-titlebar">
-          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
-          <span class="wtitle">eminence_ink_rebranding</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-c"></div>
-          <p class="tag">design</p>
-          <h3>Eminence Ink Rebranding</h3>
-          <p>A rebranding project for a local tattoo parlor as a component of DMD courses..</p>
-        </div>
-      </article>
-
-      <article class="window-card">
-        <div class="window-titlebar">
-          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
-          <span class="wtitle">urban_v_rural.jpg</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-d"></div>
-          <p class="tag">photography</p>
-          <h3>Urban vs Rural Series</h3>
-          <p>A landscape series exploring industrial vs agricultural in hard colors and textures.</p>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-   <section id="media" class="section">
-    <h2 class="section-heading">media</h2>
-
-    <div class="window-grid">
-       <article class="window-card">
-        <div class="window-titlebar">
-          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
-          <span class="wtitle">Puerto_Rico.jpg</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-a"></div>
-          <p class="tag">Puerto Rico</p>
-          <h3>Puerto Rico collection</h3>
-          <p>A collection of photos taken on la Isla Bonita, Puerto Rico.</p>
-        </div>
-      </article>
-
-      <article class="window-card">
-        <div class="window-titlebar">
-          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
-          <span class="wtitle">new_england.jpg</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-b"></div>
-          <p class="tag">new england</p>
-          <h3>New England collection</h3>
-          <p>A collection of photos taken in CT, MA, RI, NH, and ME.</p>
-        </div>
-      </article>
-
-      <article class="window-card">
-        <div class="window-titlebar">
-          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
-          <span class="wtitle">california.jpg</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-b"></div>
-          <p class="tag">california</p>
-          <h3>California collection</h3>
-          <p>A collection of photos taken in the Sunshine state.</p>
-        </div>
-      </article>
-
-       <article class="window-card">
-        <div class="window-titlebar">
-          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
-          <span class="wtitle">mid-atlantic.jpg</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-b"></div>
-          <p class="tag">mid atlantic</p>
-          <h3>Mid-Atlantic collection</h3>
-          <p>A collection of photos taken in NY, PA, NJ, and MD.</p>
-        </div>
-      </article>
-
-      <article class="window-card">
-        <div class="window-titlebar">
-          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
-          <span class="wtitle">portraits.jpg</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-b"></div>
-          <p class="tag">portraits</p>
-          <h3>Portrait collection</h3>
-          <p>Portrait photos taken both digitally and on film.</p>
-        </div>
-      </article>
-
-      <article class="window-card">
-        <div class="window-titlebar">
-          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
-          <span class="wtitle">multimedia</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-b"></div>
-          <p class="tag">multimedia</p>
-          <h3>Multimedia</h3>
-          <p>Mixed and Multimedia collages, physical work, and archived work.</p>
-        </div>
-      </article>
-      
-      </div>
-  </section>
-
-   <section id="resume" class="section">
-    <h2 class="section-heading">resume</h2>
-
-    <div class="window-grid">
-       <article class="window-card">
-        <div class="window-titlebar">
-          <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
-          <span class="wtitle">my_resume.pdf</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-a"></div>
-          <p class="tag">Resume/CV</p>
-          <h3>Resume/CV</h3>
-          <p>My resume detailing past and current positions, and notable projects and skills. </p>
-        </div>
-      </article>
-
-       </div>
-  </section>
-
-  <!-- ============================================
-    ABOUT — bio + "properties panel" stat list.
-    EDIT: bio paragraph and the property values
-  ============================================= -->
-  <section id="about" class="section">
-    <h2 class="section-heading">about</h2>
-    <div class="about-grid">
-      <div class="about-photo" aria-hidden="true"></div>
-      <div class="about-copy">
-        <p>I'm a designer, photographer, and writer studying at the University of Connecticut. I plan on researching the connection between Artifical Intelligence, Design and Digital Ethics, Consumer Privacy and Data, and Internet Culture. I am working towards a Digital Media and Design major with a minor in Political Science on the Pre-Law track. I am also enrolled in a Fast-Track Undergraduate program to work towards gaining a Master's in Public Policy.</p>
-        <p>Currently working as: a Marketing Assistant at UConn's Institutional Insights and Innovation, a Digital Producer at UConn's Daily Campus, a Communications & Digital Media Specialist at UConn's Honors and Enrichment Programs.  </p>
-
-        <dl class="properties">
-          <div><dt>Type</dt><dd>Digital Culture Researcher | Media Designer | Marketing Specialist | Photographer</dd></div>
-          <div><dt>Based in</dt><dd>Storrs Mansfield, CT</dd></div>
-          <div><dt>Tools</dt><dd>Adobe Creative Cloud, Microsoft Suite, Digital Media Tech (AntConc, Gephi, Visual Studio Code, Voyant)</dd></div>
-          <div><dt>Interests</dt><dd>1990s era Internet Culture, Digital Repositories, Latin American Photography and Media projects, Arsenal Football Club, becoming as niche as possible on Last.FM, logging everything I watch on Letterboxd </dd></div>
-          <div><dt>Status</dt><dd>Undergraduate Student, Open to Work</dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================
-    WRITING — file-listing style list.
-    EDIT: titles, dates, excerpts. Link href="#" to real posts/PDFs.
-  ============================================= -->
-  <section id="writing" class="section">
-    <h2 class="section-heading">writing</h2>
-    <ul class="file-list">
-      <li>
-        <a href="#">
-          <span class="file-icon">txt</span>
-          <span class="file-main">
-            <span class="file-name">How the Denial of European Colonialism Sinks Ships</span>
-            <span class="file-excerpt">The connection of European right-wing parties and their linguistics to the refugee "crisis".</span>
-          </span>
-          <span class="file-date">2025.11</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <span class="file-icon">txt</span>
-          <span class="file-main">
-            <span class="file-name">Crossing the Picket Line for Prompt Engineering</span>
-            <span class="file-excerpt">A commentary and review of Artifical Intelligence in the world of cinema.</span>
-          </span>
-          <span class="file-date">2026.03</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <span class="file-icon">txt</span>
-          <span class="file-main">
-            <span class="file-name">Equity on Trial: The Intersection of Race, Class, and Justice in the Judicial System</span>
-            <span class="file-excerpt">An argument for the importance of courtwatching in urban trial settings.</span>
-          </span>
-          <span class="file-date">2025.02</span>
-        </a>
-      </li>
-    </ul>
-  </section>
-
-  <!-- ============================================
-    CONTACT — EDIT: email address, social links
-  ============================================= -->
-  <section id="contact" class="section contact-section">
-    <h2 class="section-heading">contact</h2>
-    <p class="contact-copy">interested in more of my work? just want to say hi?</p>
-    <a class="contact-email" href="mailto:enderzoe55@gmail.com">enderzoe55@gmail.com</a>
-    <div class="social-links">
-      <a href="#">Linkedin</a>
-      <a href="#">Substack</a>
-      <a href="#">Flickr</a>
-    </div>
   </section>
 
 </main>
