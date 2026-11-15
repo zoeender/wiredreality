@@ -905,3 +905,96 @@ a:focus-visible {
   .resume-columns { grid-template-columns: 1fr; }
   .resume-embed { height: 70vh; min-height: 420px; }
 }
+
+/* ==================================================
+   POP-UP WINDOWS (photography.html etc.)
+   Each .popup is a whole window that is also a link.
+================================================== */
+.popup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 720px;       /* smaller windows: raise this to make them bigger */
+  margin: 0 auto;
+}
+
+.popup {
+  display: block;
+  padding: 3px;
+  text-decoration: none;
+  color: #000;
+  background: var(--gray);
+  box-shadow: var(--bevel-out), 6px 6px 0 rgba(0, 0, 0, 0.35); /* window + drop shadow */
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+/* little window-control buttons with real symbols */
+.popup .wdot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+}
+
+/* hover / keyboard focus: window lifts and its title bar turns purple */
+.popup:hover,
+.popup:focus-visible {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--bevel-out), 9px 9px 0 rgba(0, 0, 0, 0.35);
+  outline: none;
+}
+
+.popup:hover .window-titlebar,
+.popup:focus-visible .window-titlebar {
+  background: var(--teal);
+}
+
+.popup:hover .wtitle,
+.popup:focus-visible .wtitle {
+  color: var(--white);
+}
+
+/* clicking presses the window in */
+.popup:active {
+  transform: translate(0, 0);
+  box-shadow: var(--bevel-in);
+}
+
+.popup .window-body p:not(.tag):not(.popup-open) { margin: 0; }
+
+.popup-open {
+  margin: 12px 0 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-decoration: underline;
+  color: var(--link);
+}
+
+.popup:hover .popup-open { color: #ff0000; }
+
+/* real photos inside the window */
+.popup-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  margin-bottom: 14px;
+  box-shadow: var(--bevel-in);
+}
+
+@media (max-width: 520px) {
+  .popup-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+}
+
+/* compact window contents */
+.popup .window-body { padding: 8px; }
+.popup .thumb { margin-bottom: 8px; }
+.popup .wtitle { font-size: 11px; }
+.popup-open { margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .popup { transition: none; }
+}
