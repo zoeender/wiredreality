@@ -5,7 +5,7 @@
    TOKENS — Windows 98 palette (change to re-theme)
 ================================================== */
 :root {
-  --teal: #008080;      /* desktop */
+  --teal: #69537d;      /* desktop */
   --gray: #c0c0c0;      /* window / button face */
   --gray-light: #dfdfdf;
   --gray-dark: #808080;
