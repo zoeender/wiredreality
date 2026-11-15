@@ -784,3 +784,124 @@ a:focus-visible {
 
 /* Keep the fixed taskbar from covering section headings after a jump */
 .section { scroll-margin-top: 16px; scroll-margin-bottom: 60px; }
+
+/* ==================================================
+   INNER PAGES (resume.html etc.)
+================================================== */
+.page-top {
+  width: calc(100% - 32px);
+  max-width: 1040px;
+  margin: 24px auto 0;
+}
+
+.page-title {
+  text-align: center;
+  margin-top: 4px;
+  font-size: clamp(28px, 5vw, 48px);
+  color: var(--white);
+}
+
+/* Taskbar button for the page you're on looks pressed */
+.tab[aria-current="page"] {
+  background: repeating-conic-gradient(var(--gray) 0 25%, var(--white) 0 50%) 0 0 / 2px 2px;
+  box-shadow: var(--bevel-in);
+  font-weight: 700;
+}
+
+/* Generic Win98 push button (links styled as buttons) */
+.btn {
+  display: inline-block;
+  padding: 5px 16px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #000;
+  background: var(--gray);
+  box-shadow: var(--bevel-out);
+}
+.btn:hover { background: var(--gray-light); }
+.btn:active { box-shadow: var(--bevel-in); }
+
+/* ---- Resume file area ---- */
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.resume-embed {
+  display: block;
+  width: 100%;
+  height: 80vh;
+  min-height: 520px;
+  background: var(--white);
+  box-shadow: var(--bevel-in);
+}
+
+.resume-fallback { padding: 16px; }
+
+/* ---- Two-column experience layout ---- */
+.resume-columns {
+  display: grid;
+  grid-template-columns: 3fr 2fr;   /* experiences wider than skills/projects */
+  gap: 24px;
+  align-items: start;
+}
+
+.job {
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px dotted var(--gray-dark);
+}
+.job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.job h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.job p { margin: 0; font-size: 13.5px; }
+
+.job-meta {
+  font-family: var(--font-mono);
+  font-size: 12px !important;
+  margin-bottom: 4px !important;
+}
+
+.job-org {
+  font-weight: 700;
+  margin-bottom: 6px !important;
+}
+
+.job ul { margin: 0; padding-left: 18px; font-size: 13.5px; }
+.job li { margin-bottom: 3px; }
+
+.pane-heading {
+  font-family: var(--font-display);
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+.pane-heading:not(:first-child) { margin-top: 24px; }
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+.skill-list li {
+  padding: 3px 10px;
+  font-size: 12.5px;
+  background: var(--gray);
+  box-shadow: var(--bevel-out);
+}
+
+@media (max-width: 760px) {
+  .resume-columns { grid-template-columns: 1fr; }
+  .resume-embed { height: 70vh; min-height: 420px; }
+}
