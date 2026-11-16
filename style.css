@@ -791,3 +791,94 @@ a:focus-visible {
   .pdf-grid { grid-template-columns: 1fr; }
   .pdf-view { height: 380px; }
 }
+
+/* ==================================================
+   CONTACT PAGE (contact.html)
+================================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 110px 1fr;   /* first number = portrait width */
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+/* works for both the placeholder <div> and a real <img class="profile-photo"> */
+.profile-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: linear-gradient(160deg, var(--purple), var(--navy));
+  box-shadow: var(--bevel-in);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.contact-text p { max-width: 62ch; margin: 0 0 12px; }
+
+.contact-list {
+  margin: 0;
+  background: var(--white);
+  box-shadow: var(--bevel-in);
+}
+
+.contact-list div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  border-bottom: 1px solid var(--gray-dark);
+}
+.contact-list div:last-child { border-bottom: none; }
+
+.contact-list dt {
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--gray);
+  border-right: 1px solid var(--gray-dark);
+}
+
+.contact-list dd {
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 13.5px;
+  background: var(--white);
+  overflow-wrap: anywhere;
+}
+
+.contact-list a { color: var(--link); }
+.contact-list a:hover { color: #ff0000; }
+
+/* small horizontal email box */
+.email-bar { padding-bottom: 16px; }
+.email-bar .section-heading { margin-bottom: 14px; }
+
+.email-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.email-label { font-weight: 700; }
+
+.email-field {
+  flex: 1;
+  min-width: 200px;
+  padding: 4px 10px;
+  background: var(--white);
+  box-shadow: var(--bevel-in);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .profile-photo { max-width: 110px; }
+}
+
+/* contact info window inside the main box */
+.contact-window .window-body { padding: 10px; }
