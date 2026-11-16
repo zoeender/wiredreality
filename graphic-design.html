@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graphic Design — Zoë Ender — Wired Reality</title>
+<meta name="description" content="Graphic design and poster work by Zoë Ender.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Ink:wght@100..900&family=Isometra&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<!-- BROWSER CHROME BAR — same decorative strip as the other pages -->
+<div class="browser-chrome">
+  <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="url-bar">wired-reality.com/graphic-design</div>
+</div>
+
+<!-- TASKBAR — same buttons as the other pages (this page's button looks "pressed") -->
+<nav class="tab-nav">
+  <div class="tab-nav-inner">
+    <a href="resume.html" class="tab">resume | cv</a>
+    <a href="advertising.html" class="tab">advertising</a>
+    <a href="graphic-design.html" class="tab" aria-current="page">graphic design</a>
+    <a href="research.html" class="tab">research</a>
+    <a href="photography.html" class="tab">photography</a>
+    <a href="videography.html" class="tab">videography</a>
+  </div>
+</nav>
+
+<main>
+
+  <div class="page-top">
+    <a class="back-link" href="index.html">&larr; back to desktop</a>
+    <h1 class="page-title">graphic design</h1>
+  </div>
+
+  <!-- ============================================
+    POSTER GALLERY — 8 posters in one Win98 window, 4 across x 2 rows.
+    EDIT for each poster:
+      1. Title -> the text inside <h3 class="poster-title"> (sits on top of the poster)
+      2. Image -> put your posters in a folder called "posters" next to this page and
+                  name them poster-01.jpg ... poster-08.jpg (or change both src and href).
+                  Clicking a poster opens the full-size image in a new tab.
+      3. alt   -> a short description of the poster, for screen readers
+    To change how many posters sit side by side, or how big they are, see .poster-grid in style.css.
+  ============================================= -->
+  <section id="posters" class="section">
+    <h2 class="section-heading">graphic_design</h2>
+
+    <div class="poster-grid">
+
+      <figure class="poster">
+        <h3 class="poster-title">Poster title 01</h3>
+        <a class="poster-link" href="posters/poster-01.jpg" target="_blank" rel="noopener">
+          <img class="poster-img" src="posters/poster-01.jpg" alt="Poster 01: add a short description" loading="lazy">
+        </a>
+      </figure>
+
+      <figure class="poster">
+        <h3 class="poster-title">Poster title 02</h3>
+        <a class="poster-link" href="posters/poster-02.jpg" target="_blank" rel="noopener">
+          <img class="poster-img" src="posters/poster-02.jpg" alt="Poster 02: add a short description" loading="lazy">
+        </a>
+      </figure>
+
+      <figure class="poster">
+        <h3 class="poster-title">Poster title 03</h3>
+        <a class="poster-link" href="posters/poster-03.jpg" target="_blank" rel="noopener">
+          <img class="poster-img" src="posters/poster-03.jpg" alt="Poster 03: add a short description" loading="lazy">
+        </a>
+      </figure>
+
+      <figure class="poster">
+        <h3 class="poster-title">Poster title 04</h3>
+        <a class="poster-link" href="posters/poster-04.jpg" target="_blank" rel="noopener">
+          <img class="poster-img" src="posters/poster-04.jpg" alt="Poster 04: add a short description" loading="lazy">
+        </a>
+      </figure>
+
+      <figure class="poster">
+        <h3 class="poster-title">Poster title 05</h3>
+        <a class="poster-link" href="posters/poster-05.jpg" target="_blank" rel="noopener">
+          <img class="poster-img" src="posters/poster-05.jpg" alt="Poster 05: add a short description" loading="lazy">
+        </a>
+      </figure>
+
+      <figure class="poster">
+        <h3 class="poster-title">Poster title 06</h3>
+        <a class="poster-link" href="posters/poster-06.jpg" target="_blank" rel="noopener">
+          <img class="poster-img" src="posters/poster-06.jpg" alt="Poster 06: add a short description" loading="lazy">
+        </a>
+      </figure>
+
+      <figure class="poster">
+        <h3 class="poster-title">Poster title 07</h3>
+        <a class="poster-link" href="posters/poster-07.jpg" target="_blank" rel="noopener">
+          <img class="poster-img" src="posters/poster-07.jpg" alt="Poster 07: add a short description" loading="lazy">
+        </a>
+      </figure>
+
+      <figure class="poster">
+        <h3 class="poster-title">Poster title 08</h3>
+        <a class="poster-link" href="posters/poster-08.jpg" target="_blank" rel="noopener">
+          <img class="poster-img" src="posters/poster-08.jpg" alt="Poster 08: add a short description" loading="lazy">
+        </a>
+      </figure>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER MARQUEE — same scrolling ticker as the other pages -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>linkedin: zoë ender -- flickr.com/photos/202201872@N04/ -- substack: @wiredreality -- say hello! enderzoe55@gmail.com &nbsp;</span>
+    <span>linkedin: zoë ender -- flickr.com/photos/202201872@N04/-- substack: @wiredreality -- say hello! enderzoe55@gmail.com —&nbsp;</span>
+  </div>
+</div>
+<footer class="site-footer">
+  <p>last updated 2026 · built with Cloudflare Pages and GitHub · Zoë Ender</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
