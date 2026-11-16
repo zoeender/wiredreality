@@ -1,1 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Videography — Zoë Ender — Wired Reality</title>
+<meta name="description" content="Videography by Zoë Ender.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Ink:wght@100..900&family=Isometra&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<!-- BROWSER CHROME BAR — same decorative strip as the other pages -->
+<div class="browser-chrome">
+  <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="url-bar">wired-reality.com/videography</div>
+</div>
+
+<!-- TASKBAR — same buttons as the other pages (this page's button looks "pressed") -->
+<nav class="tab-nav">
+  <div class="tab-nav-inner">
+    <a href="resume.html" class="tab">resume | cv</a>
+    <a href="advertising.html" class="tab">advertising</a>
+    <a href="graphic-design.html" class="tab">graphic design</a>
+    <a href="research.html" class="tab">research</a>
+    <a href="photography.html" class="tab">photography</a>
+    <a href="videography.html" class="tab" aria-current="page">videography</a>
+  </div>
+</nav>
+
+<main>
+
+  <div class="page-top">
+    <a class="back-link" href="index.html">&larr; back to desktop</a>
+    <h1 class="page-title">videography</h1>
+  </div>
+
+  <!-- ============================================
+    8 VIDEO WINDOWS — 2 columns x 4 rows
+    EDIT for each window:
+      1. Title      -> the text inside <span class="wtitle"> (top of the window)
+      2. Video file -> put your videos in a folder called "videos" next to this page and
+                       name them video-01.mp4 ... video-08.mp4 (or change the src="...").
+                       Optional cover image: add poster="videos/video-01.jpg" to the <video> tag.
+      3. Date/notes -> the .video-date and .video-note lines under the video
+
+    VIDEO ON YOUTUBE / VIMEO INSTEAD? Replace the whole <video>...</video> block with:
+      <iframe class="video-view" src="PASTE-THE-EMBED-LINK-HERE" title="Video 01"
+              allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  ============================================= -->
+  <section id="videos" class="section">
+    <h2 class="section-heading">videography</h2>
+
+    <div class="video-grid">
+
+      <article class="video-window">
+        <div class="window-titlebar">
+          <span class="wtitle">Title of video 01</span>
+          <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
+        </div>
+        <div class="window-body">
+          <video class="video-view" controls preload="metadata" playsinline aria-label="Video 01">
+            <source src="videos/video-01.mp4" type="video/mp4">
+            Your browser can't play this video.
+          </video>
+          <div class="video-meta">
+            <p class="video-date">Month YYYY</p>
+            <p class="video-note">Add a one-line description or role here.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-window">
+        <div class="window-titlebar">
+          <span class="wtitle">Title of video 02</span>
+          <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
+        </div>
+        <div class="window-body">
+          <video class="video-view" controls preload="metadata" playsinline aria-label="Video 02">
+            <source src="videos/video-02.mp4" type="video/mp4">
+            Your browser can't play this video.
+          </video>
+          <div class="video-meta">
+            <p class="video-date">Month YYYY</p>
+            <p class="video-note">Add a one-line description or role here.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-window">
+        <div class="window-titlebar">
+          <span class="wtitle">Title of video 03</span>
+          <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
+        </div>
+        <div class="window-body">
+          <video class="video-view" controls preload="metadata" playsinline aria-label="Video 03">
+            <source src="videos/video-03.mp4" type="video/mp4">
+            Your browser can't play this video.
+          </video>
+          <div class="video-meta">
+            <p class="video-date">Month YYYY</p>
+            <p class="video-note">Add a one-line description or role here.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-window">
+        <div class="window-titlebar">
+          <span class="wtitle">Title of video 04</span>
+          <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
+        </div>
+        <div class="window-body">
+          <video class="video-view" controls preload="metadata" playsinline aria-label="Video 04">
+            <source src="videos/video-04.mp4" type="video/mp4">
+            Your browser can't play this video.
+          </video>
+          <div class="video-meta">
+            <p class="video-date">Month YYYY</p>
+            <p class="video-note">Add a one-line description or role here.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-window">
+        <div class="window-titlebar">
+          <span class="wtitle">Title of video 05</span>
+          <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
+        </div>
+        <div class="window-body">
+          <video class="video-view" controls preload="metadata" playsinline aria-label="Video 05">
+            <source src="videos/video-05.mp4" type="video/mp4">
+            Your browser can't play this video.
+          </video>
+          <div class="video-meta">
+            <p class="video-date">Month YYYY</p>
+            <p class="video-note">Add a one-line description or role here.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-window">
+        <div class="window-titlebar">
+          <span class="wtitle">Title of video 06</span>
+          <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
+        </div>
+        <div class="window-body">
+          <video class="video-view" controls preload="metadata" playsinline aria-label="Video 06">
+            <source src="videos/video-06.mp4" type="video/mp4">
+            Your browser can't play this video.
+          </video>
+          <div class="video-meta">
+            <p class="video-date">Month YYYY</p>
+            <p class="video-note">Add a one-line description or role here.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-window">
+        <div class="window-titlebar">
+          <span class="wtitle">Title of video 07</span>
+          <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
+        </div>
+        <div class="window-body">
+          <video class="video-view" controls preload="metadata" playsinline aria-label="Video 07">
+            <source src="videos/video-07.mp4" type="video/mp4">
+            Your browser can't play this video.
+          </video>
+          <div class="video-meta">
+            <p class="video-date">Month YYYY</p>
+            <p class="video-note">Add a one-line description or role here.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-window">
+        <div class="window-titlebar">
+          <span class="wtitle">Title of video 08</span>
+          <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
+        </div>
+        <div class="window-body">
+          <video class="video-view" controls preload="metadata" playsinline aria-label="Video 08">
+            <source src="videos/video-08.mp4" type="video/mp4">
+            Your browser can't play this video.
+          </video>
+          <div class="video-meta">
+            <p class="video-date">Month YYYY</p>
+            <p class="video-note">Add a one-line description or role here.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER MARQUEE — same scrolling ticker as the other pages -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>linkedin: zoë ender -- flickr.com/photos/202201872@N04/ -- substack: @wiredreality -- say hello! enderzoe55@gmail.com &nbsp;</span>
+    <span>linkedin: zoë ender -- flickr.com/photos/202201872@N04/-- substack: @wiredreality -- say hello! enderzoe55@gmail.com —&nbsp;</span>
+  </div>
+</div>
+<footer class="site-footer">
+  <p>last updated 2026 · built with Cloudflare Pages and GitHub · Zoë Ender</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
