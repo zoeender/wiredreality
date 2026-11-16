@@ -740,16 +740,19 @@ a:focus-visible {
   gap: 28px;
 }
 
-.pdf-window {
+.pdf-window,
+.video-window {
   padding: 3px;
   background: var(--gray);
   box-shadow: var(--bevel-out), 4px 4px 0 rgba(0, 0, 0, 0.35);
 }
 
 /* long titles can wrap instead of being cut off */
-.pdf-window .wtitle { white-space: normal; line-height: 1.25; }
+.pdf-window .wtitle,
+.video-window .wtitle { white-space: normal; line-height: 1.25; }
 
-.pdf-window .wdot {
+.pdf-window .wdot,
+.video-window .wdot {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -770,15 +773,18 @@ a:focus-visible {
 .pdf-fallback { padding: 16px; margin: 0; }
 
 /* room under each viewer for the date, a note and a link */
-.pdf-meta { padding-top: 12px; min-height: 96px; }
+.pdf-meta,
+.video-meta { padding-top: 12px; min-height: 96px; }
 
-.pdf-date {
+.pdf-date,
+.video-date {
   margin: 0 0 4px;
   font-family: var(--font-mono);
   font-size: 12px;
 }
 
-.pdf-note { margin: 0 0 8px; font-size: 13.5px; }
+.pdf-note,
+.video-note { margin: 0 0 8px; font-size: 13.5px; }
 
 .pdf-open {
   font-family: var(--font-mono);
@@ -882,3 +888,26 @@ a:focus-visible {
 
 /* contact info window inside the main box */
 .contact-window .window-body { padding: 10px; }
+
+/* ==================================================
+   VIDEO WINDOWS (videography.html) — 2 x 4 grid
+   (window frame, title bar and caption styles are shared with .pdf-window above)
+================================================== */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.video-view {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--black);
+  border: none;
+  box-shadow: var(--bevel-in);
+}
+
+@media (max-width: 760px) {
+  .video-grid { grid-template-columns: 1fr; }
+}
