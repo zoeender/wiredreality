@@ -741,7 +741,8 @@ a:focus-visible {
 }
 
 .pdf-window,
-.video-window {
+.video-window,
+.ad-window {
   padding: 3px;
   background: var(--gray);
   box-shadow: var(--bevel-out), 4px 4px 0 rgba(0, 0, 0, 0.35);
@@ -749,10 +750,12 @@ a:focus-visible {
 
 /* long titles can wrap instead of being cut off */
 .pdf-window .wtitle,
-.video-window .wtitle { white-space: normal; line-height: 1.25; }
+.video-window .wtitle,
+.ad-window .wtitle { white-space: normal; line-height: 1.25; }
 
 .pdf-window .wdot,
-.video-window .wdot {
+.video-window .wdot,
+.ad-window .wdot {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -947,4 +950,72 @@ a:focus-visible {
 
 @media (max-width: 760px) {
   .poster-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ==================================================
+   ADVERTISING WINDOWS (advertising.html) — wide PDF on top, 3 images below
+   (window frame, title bar and buttons are shared with .pdf-window above)
+   Order inside each window: media -> title/business box -> description
+================================================== */
+.ad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+/* the PDF window spans the full width and is much taller */
+.ad-window-wide { grid-column: 1 / -1; }
+.ad-window-wide .ad-media { height: 680px; }   /* PDF height: raise or lower to taste */
+
+/* the PDF or the image */
+.ad-media {
+  display: block;
+  width: 100%;
+  height: 340px;
+  background: var(--white);
+  box-shadow: var(--bevel-in);
+}
+
+img.ad-media {
+  object-fit: contain;           /* whole ad always shows */
+  background: var(--purple);
+}
+
+.ad-link { display: block; }
+.ad-link:hover .ad-media { opacity: 0.88; }
+
+/* small title + business box, under the media and above the description */
+.ad-title-box {
+  margin-top: 12px;
+  padding: 6px 10px;
+  background: var(--white);
+  box-shadow: var(--bevel-in);
+}
+
+.ad-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.ad-business {
+  margin: 2px 0 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+/* room for the description */
+.ad-desc {
+  margin: 12px 0 0;
+  min-height: 72px;
+  font-size: 13.5px;
+}
+
+@media (max-width: 760px) {
+  .ad-grid { grid-template-columns: 1fr; }
+  .ad-media { height: 300px; }
+  .ad-window-wide .ad-media { height: 480px; }
 }
