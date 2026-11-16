@@ -911,3 +911,40 @@ a:focus-visible {
 @media (max-width: 760px) {
   .video-grid { grid-template-columns: 1fr; }
 }
+
+/* ==================================================
+   POSTER GALLERY (graphic-design.html) — 4 across x 2 rows
+================================================== */
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   /* posters per row: change 4 to 3 or 2 for bigger posters */
+  gap: 20px;
+}
+
+.poster { margin: 0; }
+
+/* title sits on top of each poster */
+.poster-title {
+  margin: 0 0 6px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.poster-link { display: block; }
+
+.poster-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;          /* poster shape; whole poster always shows */
+  object-fit: contain;
+  background: var(--purple);    /* shows around/behind the poster until it loads */
+  box-shadow: var(--bevel-in);
+}
+
+.poster-link:hover .poster-img { opacity: 0.88; }
+
+@media (max-width: 760px) {
+  .poster-grid { grid-template-columns: repeat(2, 1fr); }
+}
