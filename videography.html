@@ -38,11 +38,11 @@
   </div>
 
   <!-- ============================================
-    8 VIDEO WINDOWS — 2 columns x 4 rows
+    9 VIDEO WINDOWS — 2 columns (the last row has one window)
     EDIT for each window:
       1. Title      -> the text inside <span class="wtitle"> (top of the window)
       2. Video file -> put your videos in a folder called "videos" next to this page and
-                       name them video-01.mp4 ... video-08.mp4 (or change the src="...").
+                       name them video-01.mp4 ... video-09.mp4 (or change the src="...").
                        Optional cover image: add poster="videos/video-01.jpg" to the <video> tag.
       3. Date/notes -> the .video-date and .video-note lines under the video
 
@@ -93,10 +93,9 @@
           <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
         </div>
         <div class="window-body">
-          <video class="video-view" controls preload="metadata" playsinline aria-label="Video 03">
-            <source src="videos/video-03.mp4" type="video/mp4">
-            Your browser can't play this video.
-          </video>
+          <iframe class="video-view" src="https://www.youtube.com/embed/9whg9VeHrgk"
+                  title="Title of video 03" allow="fullscreen; picture-in-picture"
+                  allowfullscreen loading="lazy"></iframe>
           <div class="video-meta">
             <p class="video-date">Month YYYY</p>
             <p class="video-note">Add a one-line description or role here.</p>
@@ -110,8 +109,24 @@
           <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
         </div>
         <div class="window-body">
-          <iframe class="video-view" src="https://www.youtube.com/embed/lJugrDVfFto"
+          <iframe class="video-view" src="https://www.youtube.com/embed/AthuD9KoyJ4"
                   title="Title of video 04" allow="fullscreen; picture-in-picture"
+                  allowfullscreen loading="lazy"></iframe>
+          <div class="video-meta">
+            <p class="video-date">Month YYYY</p>
+            <p class="video-note">Add a one-line description or role here.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-window">
+        <div class="window-titlebar">
+          <span class="wtitle">Title of video 05</span>
+          <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
+        </div>
+        <div class="window-body">
+          <iframe class="video-view" src="https://www.youtube.com/embed/lJugrDVfFto"
+                  title="Title of video 05" allow="fullscreen; picture-in-picture"
                   allowfullscreen loading="lazy"></iframe>
           <div class="video-meta">
             <p class="video-date">Month YYYY</p>
