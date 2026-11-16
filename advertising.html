@@ -38,35 +38,35 @@
   </div>
 
   <!-- ============================================
-    4 AD WINDOWS — window 1 shows a PDF, windows 2-4 show images.
+    4 AD WINDOWS — window 1 (full width, extra tall) shows a PDF, windows 2-4 show images below it.
     Each window = media on top, then a small title + business box, then the description.
     EDIT for each window:
       1. File  -> PDF: pdfs/advertising-01.pdf    images: images/advertising-02.jpg ... -03 ... -04
                   (change the paths in data=/src=/href= if you use other names)
       2. Title box -> .ad-title (campaign title) and .ad-business (business name)
       3. Description -> the .ad-desc paragraph
-    Want a different window to hold the PDF? Copy the <object> block into it and
-    swap the <a><img></a> block out.
+    Want a different window to hold the PDF? Copy the <object> block into it, swap the
+    <a><img></a> block out, and move class="ad-window-wide" onto that window to make it full width.
   ============================================= -->
   <section id="ads" class="section">
     <h2 class="section-heading">advertising</h2>
 
     <div class="ad-grid">
 
-      <article class="ad-window">
+      <article class="ad-window ad-window-wide">
         <div class="window-titlebar">
-          <span class="wtitle">behance-6812a5b149bdf.pdf</span>
+          <span class="wtitle">campaign_01.pdf</span>
           <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
         </div>
         <div class="window-body">
-          <object class="ad-media" data="behance-6812a5b149bdf.pdf#toolbar=0&amp;navpanes=0" type="application/pdf" aria-label="PDF viewer: advertising 01">
-            <p class="pdf-fallback">Can't show the PDF here. <a href="behance-6812a5b149bdf.pdf">Download it</a> instead.</p>
+          <object class="ad-media" data="pdfs/advertising-01.pdf#toolbar=0&amp;navpanes=0" type="application/pdf" aria-label="PDF viewer: advertising 01">
+            <p class="pdf-fallback">Can't show the PDF here. <a href="pdfs/advertising-01.pdf">Download it</a> instead.</p>
           </object>
 
           <!-- small title + business box (sits above the description, below the poster) -->
           <div class="ad-title-box">
-            <p class="ad-title">Re-branding Project</p>
-            <p class="ad-business">Eminence Ink (DMD 1102)</p>
+            <p class="ad-title">Ad title 01</p>
+            <p class="ad-business">Business name</p>
           </div>
 
           <p class="ad-desc">Add a description of the campaign here: the goal, your role, and the results.</p>
