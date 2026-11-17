@@ -46,8 +46,10 @@
       2. Photos -> data-folder="photos/gallery-01" data-count="5" means:
                    the gallery shows photos/gallery-01/1.jpg, 2.jpg, 3.jpg, 4.jpg, 5.jpg.
                    Change data-count to however many photos you have.
-                   Want different file names or types? Replace data-folder and data-count with
-                   data-photos="photos/a.jpg, photos/b.png, photos/c.jpg"
+                   Photos NOT in a folder (loose next to this page)? Use a plain list of file names instead:
+                   data-photos="photo_01-1.jpg, photo_01-2.jpg, photo_01-3.jpg"
+                   (separate with commas; names are case-sensitive; avoid commas inside a file name;
+                   add a folder in front, like photos/a.jpg, only if the file lives in one)
       3. Cover  -> swap the colored <span class="thumb ..."></span> for
                    <img class="popup-img" src="photos/gallery-01/1.jpg" alt="">
     The "view full portfolio" button inside the gallery links to your Portfolio site (see the <dialog> below).
@@ -57,9 +59,9 @@
 
     <div class="popup-grid">
 
-      <button type="button" class="popup" data-folder="photos/gallery-01" data-count="5" aria-haspopup="dialog">
+      <button type="button" class="popup" data-photos="molly-1.jpg, molly-2.jpg, molly-3.jpg, molly-4.jpg, molly-5.jpg, molly-6.jpg, molly-7.jpg, molly-8.jpg" aria-haspopup="dialog">
         <span class="window-titlebar">
-          <span class="wtitle">photo_01.jpg</span>
+          <span class="wtitle">gen-x-soft-club-aesthetic.jpg</span>
           <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
         </span>
         <span class="window-body">
