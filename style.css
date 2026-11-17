@@ -638,18 +638,18 @@ a:focus-visible {
 .popup-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  max-width: 460px;       /* total width of the 3 x 3 block: raise to make windows bigger */
+  gap: 20px;
+  max-width: 780px;       /* total width of the 3 x 3 block: raise to make windows bigger, lower to shrink */
   margin: 0 auto;
 }
 
 .popup {
   display: block;
-  padding: 2px;
+  padding: 3px;
   text-decoration: none;
   color: #000;
   background: var(--gray);
-  box-shadow: var(--bevel-out), 4px 4px 0 rgba(0, 0, 0, 0.35); /* window + drop shadow */
+  box-shadow: var(--bevel-out), 5px 5px 0 rgba(0, 0, 0, 0.35); /* window + drop shadow */
   transition: transform 0.15s, box-shadow 0.15s;
 }
 
@@ -658,9 +658,9 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 11px;
-  height: 10px;
-  font-size: 8px;
+  width: 15px;
+  height: 13px;
+  font-size: 10px;
   font-weight: 700;
   line-height: 1;
   color: #000;
@@ -670,7 +670,7 @@ a:focus-visible {
 .popup:hover,
 .popup:focus-visible {
   transform: translate(-3px, -3px);
-  box-shadow: var(--bevel-out), 6px 6px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: var(--bevel-out), 8px 8px 0 rgba(0, 0, 0, 0.35);
   outline: none;
 }
 
@@ -693,7 +693,7 @@ a:focus-visible {
 .popup-open {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   text-decoration: underline;
   color: var(--link);
 }
@@ -716,14 +716,14 @@ a:focus-visible {
 
 /* compact window contents */
 
-.popup .window-titlebar { padding: 2px 3px; gap: 1px; }
+.popup .window-titlebar { padding: 3px 4px; gap: 2px; }
 
 
-.popup .window-body { padding: 5px; }
+.popup .window-body { padding: 9px; }
 
-.popup .thumb { margin-bottom: 5px; }
+.popup .thumb { margin-bottom: 9px; }
 
-.popup .wtitle { font-size: 9px; }
+.popup .wtitle { font-size: 12px; }
 
 
 @media (prefers-reduced-motion: reduce) {
@@ -1129,7 +1129,7 @@ img, video, iframe, object { max-width: 100%; }   /* nothing can push the page s
 @media (hover: none) {
   .popup:hover {
     transform: none;
-    box-shadow: var(--bevel-out), 4px 4px 0 rgba(0, 0, 0, 0.35);
+    box-shadow: var(--bevel-out), 5px 5px 0 rgba(0, 0, 0, 0.35);
   }
   .popup:hover .window-titlebar { background: var(--title-grad); }
   .popup:hover .wtitle { color: #000; }
