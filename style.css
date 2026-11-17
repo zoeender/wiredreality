@@ -1019,3 +1019,101 @@ img.ad-media {
   .ad-media { height: 300px; }
   .ad-window-wide .ad-media { height: 480px; }
 }
+
+/* ==================================================
+   MOBILE — phones and touch screens
+   (kept at the end of the file so these rules win.
+   Tablet-and-down layout switches at 760px are above, next to each component.)
+================================================== */
+html { -webkit-text-size-adjust: 100%; }          /* stop iPhones from inflating text */
+img, video, iframe, object { max-width: 100%; }   /* nothing can push the page sideways */
+
+@media (max-width: 600px) {
+
+  body { padding-bottom: 56px; }                  /* room for the taskbar */
+
+  /* ---- browser bar ---- */
+  .browser-chrome { padding: 4px 6px; gap: 6px; }
+  .dots span { width: 12px; height: 11px; }
+  .url-bar { font-size: 11px; padding: 3px 6px; }
+
+  /* ---- taskbar: swipes sideways, bigger tap targets ---- */
+  .tab-nav-inner {
+    gap: 3px;
+    padding: 4px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab-nav-inner::-webkit-scrollbar { display: none; }
+  .tab-nav-inner::before { padding: 8px 10px; margin-right: 3px; font-size: 12px; }
+  .tab { flex: 0 0 auto; padding: 8px 12px; font-size: 12px; }
+
+  /* ---- windows: tighter margins and padding ---- */
+  section,
+  .page-top,
+  .marquee { width: calc(100% - 20px); }
+  section { margin: 14px auto; }
+  .section { padding: 3px 14px 22px; }
+  .section-heading { margin: 0 -11px 16px; }
+  .page-top { margin-top: 14px; }
+  .page-title { font-size: 28px; }
+  .back-link { padding: 8px 14px; }
+  .window-body { padding: 10px; }
+  .marquee { margin-top: 14px; }
+  .marquee-track span { font-size: 12px; }
+  .site-footer { font-size: 11px; }
+
+  /* ---- home: desktop photo fills the screen width ---- */
+  .photo-stage { width: 100%; margin: 12px auto; }
+
+  /* ---- buttons: easy to tap ---- */
+  .btn { padding: 9px 16px; }
+
+  /* ---- resume ---- */
+  .resume-actions .btn { flex: 1 1 auto; text-align: center; }
+  .resume-embed { height: 60vh; min-height: 360px; }
+  .job h3 { font-size: 15px; }
+
+  /* ---- photography pop-ups ---- */
+  .popup-grid { max-width: none; }
+
+  /* ---- research / videography / advertising ---- */
+  .pdf-grid, .video-grid, .ad-grid { gap: 18px; }
+  .pdf-view, .ad-media { height: 320px; }
+  .ad-window-wide .ad-media { height: 420px; }
+  .pdf-meta { min-height: 0; }
+
+  /* ---- graphic design ---- */
+  .poster-grid { gap: 12px; }
+  .poster-title { font-size: 12px; }
+
+  /* ---- contact ---- */
+  .contact-grid { gap: 16px; }
+  .contact-list div { grid-template-columns: 84px 1fr; }
+  .contact-list dt,
+  .contact-list dd { padding: 7px 8px; }
+  .email-row { gap: 8px; }
+  .email-field { flex: 1 1 100%; min-width: 0; font-size: 12px; overflow-wrap: anywhere; }
+  .email-row .btn { flex: 1 1 100%; text-align: center; }
+}
+
+/* very small phones */
+@media (max-width: 380px) {
+  .page-title { font-size: 24px; }
+  .section { padding: 3px 10px 18px; }
+  .section-heading { margin: 0 -7px 14px; font-size: 12px; }
+  .contact-list div { grid-template-columns: 1fr; }
+  .contact-list dt { border-right: none; border-bottom: 1px solid var(--gray-dark); }
+}
+
+/* touch screens have no hover: don't leave windows "stuck" lifted after a tap */
+@media (hover: none) {
+  .popup:hover {
+    transform: none;
+    box-shadow: var(--bevel-out), 4px 4px 0 rgba(0, 0, 0, 0.35);
+  }
+  .popup:hover .window-titlebar { background: var(--title-grad); }
+  .popup:hover .wtitle { color: #000; }
+  .poster-link:hover .poster-img,
+  .ad-link:hover .ad-media { opacity: 1; }
+}
