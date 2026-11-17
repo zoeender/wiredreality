@@ -1030,7 +1030,7 @@ img, video, iframe, object { max-width: 100%; }   /* nothing can push the page s
 
 @media (max-width: 600px) {
 
-  body { padding-bottom: 56px; }                  /* room for the taskbar */
+  body { padding-bottom: 76px; }                  /* room for the (taller) taskbar */
 
   /* ---- browser bar ---- */
   .browser-chrome { padding: 4px 6px; gap: 6px; }
@@ -1039,14 +1039,33 @@ img, video, iframe, object { max-width: 100%; }   /* nothing can push the page s
 
   /* ---- taskbar: swipes sideways, bigger tap targets ---- */
   .tab-nav-inner {
-    gap: 3px;
-    padding: 4px;
+    gap: 6px;
+    padding: 8px 44px 8px 8px;   /* extra right padding so the last button can scroll clear of the arrow */
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }
   .tab-nav-inner::-webkit-scrollbar { display: none; }
-  .tab-nav-inner::before { padding: 8px 10px; margin-right: 3px; font-size: 12px; }
-  .tab { flex: 0 0 auto; padding: 8px 12px; font-size: 12px; }
+  .tab-nav-inner::before { padding: 12px 16px; margin-right: 4px; font-size: 15px; }
+  .tab { flex: 0 0 auto; padding: 12px 20px; font-size: 15px; }
+
+  /* little arrow + fade on the right edge: shows there are more buttons to swipe to */
+  .tab-nav::after {
+    content: "\203A";            /* › */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    background: linear-gradient(90deg, rgba(192, 192, 192, 0), var(--gray) 55%);
+    pointer-events: none;        /* taps go through to the buttons */
+  }
 
   /* ---- windows: tighter margins and padding ---- */
   section,
@@ -1063,8 +1082,8 @@ img, video, iframe, object { max-width: 100%; }   /* nothing can push the page s
   .marquee-track span { font-size: 12px; }
   .site-footer { font-size: 11px; }
 
-  /* ---- home: desktop photo fills the screen width ---- */
-  .photo-stage { width: 100%; margin: 12px auto; }
+  /* ---- home: desktop photo, a little smaller than the screen width ---- */
+  .photo-stage { width: 88%; margin: 12px auto; }   /* change 88% to make it bigger or smaller */
 
   /* ---- buttons: easy to tap ---- */
   .btn { padding: 9px 16px; }
