@@ -38,116 +38,123 @@
   </div>
 
   <!-- ============================================
-    POP-UP WINDOWS — a 3 x 3 grid. Every window is a link that opens
-    https://zoeender.myportfolio.com/work in a new tab.
-    EDIT: change a window's href to send it somewhere else, swap the
-    colored .thumb block for a real photo:
-      <img class="popup-img" src="images/your-photo.jpg" alt="describe the photo">
-    and rename its title (photo_01.jpg etc.).
+    POP-UP WINDOWS — a 3 x 3 grid. Clicking a window opens its photo gallery
+    (a bigger window with a large photo, thumbnails, and next/previous arrows).
+
+    EDIT for each window:
+      1. Name   -> the text inside <span class="wtitle"> (also shows on the gallery's title bar)
+      2. Photos -> data-folder="photos/gallery-01" data-count="5" means:
+                   the gallery shows photos/gallery-01/1.jpg, 2.jpg, 3.jpg, 4.jpg, 5.jpg.
+                   Change data-count to however many photos you have.
+                   Want different file names or types? Replace data-folder and data-count with
+                   data-photos="photos/a.jpg, photos/b.png, photos/c.jpg"
+      3. Cover  -> swap the colored <span class="thumb ..."></span> for
+                   <img class="popup-img" src="photos/gallery-01/1.jpg" alt="">
+    The "view full portfolio" button inside the gallery links to your Portfolio site (see the <dialog> below).
   ============================================= -->
   <section id="collections" class="section">
     <h2 class="section-heading">photography</h2>
 
     <div class="popup-grid">
 
-      <a class="popup" href="https://zoeender.myportfolio.com/22-portfolio" target="_blank" rel="noopener noreferrer" aria-label="View work on my portfolio (window 01)">
-        <div class="window-titlebar">
-          <span class="wtitle">teenage_apocalypse</span>
+      <button type="button" class="popup" data-folder="photos/gallery-01" data-count="5" aria-haspopup="dialog">
+        <span class="window-titlebar">
+          <span class="wtitle">photo_01.jpg</span>
           <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-a"></div>
-          <p class="popup-open">view work &#8599;</p>
-        </div>
-      </a>
+        </span>
+        <span class="window-body">
+          <span class="thumb thumb-a"></span>
+          <span class="popup-open">open gallery</span>
+        </span>
+      </button>
 
-      <a class="popup" href="https://zoeender.myportfolio.com/uconn-spring-25" target="_blank" rel="noopener noreferrer" aria-label="View work on my portfolio (window 02)">
-        <div class="window-titlebar">
-          <span class="wtitle">story_through_photos</span>
+      <button type="button" class="popup" data-folder="photos/gallery-02" data-count="5" aria-haspopup="dialog">
+        <span class="window-titlebar">
+          <span class="wtitle">photo_02.jpg</span>
           <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-b"></div>
-          <p class="popup-open">view work &#8599;</p>
-        </div>
-      </a>
+        </span>
+        <span class="window-body">
+          <span class="thumb thumb-b"></span>
+          <span class="popup-open">open gallery</span>
+        </span>
+      </button>
 
-      <a class="popup" href="https://zoeender.myportfolio.com/work" target="_blank" rel="noopener noreferrer" aria-label="View work on my portfolio (window 03)">
-        <div class="window-titlebar">
+      <button type="button" class="popup" data-folder="photos/gallery-03" data-count="5" aria-haspopup="dialog">
+        <span class="window-titlebar">
           <span class="wtitle">photo_03.jpg</span>
           <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-c"></div>
-          <p class="popup-open">view work &#8599;</p>
-        </div>
-      </a>
+        </span>
+        <span class="window-body">
+          <span class="thumb thumb-c"></span>
+          <span class="popup-open">open gallery</span>
+        </span>
+      </button>
 
-      <a class="popup" href="https://zoeender.myportfolio.com/work" target="_blank" rel="noopener noreferrer" aria-label="View work on my portfolio (window 04)">
-        <div class="window-titlebar">
+      <button type="button" class="popup" data-folder="photos/gallery-04" data-count="5" aria-haspopup="dialog">
+        <span class="window-titlebar">
           <span class="wtitle">photo_04.jpg</span>
           <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-d"></div>
-          <p class="popup-open">view work &#8599;</p>
-        </div>
-      </a>
+        </span>
+        <span class="window-body">
+          <span class="thumb thumb-d"></span>
+          <span class="popup-open">open gallery</span>
+        </span>
+      </button>
 
-      <a class="popup" href="https://zoeender.myportfolio.com/work" target="_blank" rel="noopener noreferrer" aria-label="View work on my portfolio (window 05)">
-        <div class="window-titlebar">
+      <button type="button" class="popup" data-folder="photos/gallery-05" data-count="5" aria-haspopup="dialog">
+        <span class="window-titlebar">
           <span class="wtitle">photo_05.jpg</span>
           <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-b"></div>
-          <p class="popup-open">view work &#8599;</p>
-        </div>
-      </a>
+        </span>
+        <span class="window-body">
+          <span class="thumb thumb-b"></span>
+          <span class="popup-open">open gallery</span>
+        </span>
+      </button>
 
-      <a class="popup" href="https://zoeender.myportfolio.com/work" target="_blank" rel="noopener noreferrer" aria-label="View work on my portfolio (window 06)">
-        <div class="window-titlebar">
+      <button type="button" class="popup" data-folder="photos/gallery-06" data-count="5" aria-haspopup="dialog">
+        <span class="window-titlebar">
           <span class="wtitle">photo_06.jpg</span>
           <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-a"></div>
-          <p class="popup-open">view work &#8599;</p>
-        </div>
-      </a>
+        </span>
+        <span class="window-body">
+          <span class="thumb thumb-a"></span>
+          <span class="popup-open">open gallery</span>
+        </span>
+      </button>
 
-      <a class="popup" href="https://zoeender.myportfolio.com/work" target="_blank" rel="noopener noreferrer" aria-label="View work on my portfolio (window 07)">
-        <div class="window-titlebar">
+      <button type="button" class="popup" data-folder="photos/gallery-07" data-count="5" aria-haspopup="dialog">
+        <span class="window-titlebar">
           <span class="wtitle">photo_07.jpg</span>
           <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-d"></div>
-          <p class="popup-open">view work &#8599;</p>
-        </div>
-      </a>
+        </span>
+        <span class="window-body">
+          <span class="thumb thumb-d"></span>
+          <span class="popup-open">open gallery</span>
+        </span>
+      </button>
 
-      <a class="popup" href="https://zoeender.myportfolio.com/work" target="_blank" rel="noopener noreferrer" aria-label="View work on my portfolio (window 08)">
-        <div class="window-titlebar">
+      <button type="button" class="popup" data-folder="photos/gallery-08" data-count="5" aria-haspopup="dialog">
+        <span class="window-titlebar">
           <span class="wtitle">photo_08.jpg</span>
           <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-c"></div>
-          <p class="popup-open">view work &#8599;</p>
-        </div>
-      </a>
+        </span>
+        <span class="window-body">
+          <span class="thumb thumb-c"></span>
+          <span class="popup-open">open gallery</span>
+        </span>
+      </button>
 
-      <a class="popup" href="https://zoeender.myportfolio.com/why-do-they-litter-in-my-garden-1" target="_blank" rel="noopener noreferrer" aria-label="View work on my portfolio (window 09)">
-        <div class="window-titlebar">
-          <span class="wtitle">why_do_they_litter</span>
+      <button type="button" class="popup" data-folder="photos/gallery-09" data-count="5" aria-haspopup="dialog">
+        <span class="window-titlebar">
+          <span class="wtitle">photo_09.jpg</span>
           <span class="wdot" aria-hidden="true">_</span><span class="wdot" aria-hidden="true">□</span><span class="wdot" aria-hidden="true">×</span>
-        </div>
-        <div class="window-body">
-          <div class="thumb thumb-a"></div>
-          <p class="popup-open">view work &#8599;</p>
-        </div>
-      </a>
+        </span>
+        <span class="window-body">
+          <span class="thumb thumb-a"></span>
+          <span class="popup-open">open gallery</span>
+        </span>
+      </button>
 
     </div>
   </section>
@@ -164,6 +171,134 @@
 <footer class="site-footer">
   <p>last updated 2026 · built with Cloudflare Pages and GitHub · Zoë Ender</p>
 </footer>
+
+<!-- ============================================
+  GALLERY WINDOW — one shared pop-up; the script fills it with the clicked window's photos.
+  EDIT: the portfolio link in the footer row.
+============================================= -->
+<dialog class="gallery-dialog" id="gallery" aria-labelledby="gallery-title">
+  <div class="gallery-window">
+    <div class="window-titlebar">
+      <span class="wtitle" id="gallery-title">gallery</span>
+      <span class="wdot" aria-hidden="true">_</span>
+      <span class="wdot" aria-hidden="true">□</span>
+      <button type="button" class="wdot gallery-close" aria-label="Close gallery">×</button>
+    </div>
+    <div class="window-body">
+      <div class="gallery-stage">
+        <button type="button" class="gallery-nav gallery-prev" aria-label="Previous photo">&#8249;</button>
+        <img class="gallery-main" src="" alt="">
+        <button type="button" class="gallery-nav gallery-next" aria-label="Next photo">&#8250;</button>
+      </div>
+      <div class="gallery-thumbs" role="group" aria-label="Choose a photo"></div>
+      <div class="gallery-footer">
+        <span class="gallery-counter" aria-live="polite">1 / 1</span>
+        <a class="btn" href="https://zoeender.myportfolio.com/work" target="_blank" rel="noopener noreferrer">view full portfolio &#8599;</a>
+      </div>
+    </div>
+  </div>
+</dialog>
+<script>
+/* Photo galleries: clicking a pop-up window opens the shared gallery window above. */
+(function () {
+  var dialog = document.getElementById('gallery');
+  if (!dialog) return;
+
+  var titleEl  = dialog.querySelector('#gallery-title');
+  var mainImg  = dialog.querySelector('.gallery-main');
+  var counter  = dialog.querySelector('.gallery-counter');
+  var thumbsEl = dialog.querySelector('.gallery-thumbs');
+  var prevBtn  = dialog.querySelector('.gallery-prev');
+  var nextBtn  = dialog.querySelector('.gallery-next');
+  var closeBtn = dialog.querySelector('.gallery-close');
+  var stage    = dialog.querySelector('.gallery-stage');
+
+  var photos = [], index = 0, opener = null;
+
+  function listPhotos(btn) {
+    if (btn.dataset.photos) {
+      return btn.dataset.photos.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+    }
+    var folder = btn.dataset.folder, count = parseInt(btn.dataset.count, 10) || 0, out = [];
+    for (var i = 1; i <= count; i++) out.push(folder + '/' + i + '.jpg');
+    return out;
+  }
+
+  function show(i) {
+    if (!photos.length) return;
+    index = (i + photos.length) % photos.length;
+    mainImg.src = photos[index];
+    mainImg.alt = titleEl.textContent + ', photo ' + (index + 1) + ' of ' + photos.length;
+    counter.textContent = (index + 1) + ' / ' + photos.length;
+    Array.prototype.forEach.call(thumbsEl.children, function (t, k) {
+      if (k === index) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current');
+    });
+  }
+
+  function open(btn) {
+    opener = btn;
+    titleEl.textContent = btn.querySelector('.wtitle').textContent;
+    photos = listPhotos(btn);
+
+    thumbsEl.innerHTML = '';
+    photos.forEach(function (src, k) {
+      var t = document.createElement('button');
+      t.type = 'button';
+      t.className = 'gallery-thumb';
+      t.setAttribute('aria-label', 'Show photo ' + (k + 1));
+      var im = document.createElement('img');
+      im.src = src; im.alt = ''; im.loading = 'lazy';
+      t.appendChild(im);
+      t.addEventListener('click', function () { show(k); });
+      thumbsEl.appendChild(t);
+    });
+
+    var several = photos.length > 1;
+    prevBtn.hidden = nextBtn.hidden = thumbsEl.hidden = !several;
+
+    show(0);
+    document.body.classList.add('gallery-open');
+    if (typeof dialog.showModal === 'function') dialog.showModal(); else dialog.setAttribute('open', '');
+  }
+
+  function close() {
+    if (typeof dialog.close === 'function') dialog.close(); else dialog.removeAttribute('open');
+  }
+
+  document.querySelectorAll('.popup').forEach(function (btn) {
+    btn.addEventListener('click', function () { open(btn); });
+  });
+
+  prevBtn.addEventListener('click', function () { show(index - 1); });
+  nextBtn.addEventListener('click', function () { show(index + 1); });
+  closeBtn.addEventListener('click', close);
+
+  /* click the dark backdrop to close */
+  dialog.addEventListener('click', function (e) { if (e.target === dialog) close(); });
+
+  /* arrow keys (Esc is handled by the browser) */
+  dialog.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); show(index - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); show(index + 1); }
+  });
+
+  /* swipe on phones */
+  var startX = null;
+  stage.addEventListener('touchstart', function (e) { startX = e.changedTouches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', function (e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    startX = null;
+    if (Math.abs(dx) > 40) show(dx < 0 ? index + 1 : index - 1);
+  }, { passive: true });
+
+  /* tidy up when it closes */
+  dialog.addEventListener('close', function () {
+    document.body.classList.remove('gallery-open');
+    if (opener) opener.focus();
+  });
+})();
+</script>
 
 <script src="script.js"></script>
 </body>
