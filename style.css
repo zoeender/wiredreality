@@ -1136,3 +1136,140 @@ img, video, iframe, object { max-width: 100%; }   /* nothing can push the page s
   .poster-link:hover .poster-img,
   .ad-link:hover .ad-media { opacity: 1; }
 }
+
+/* ==================================================
+   PHOTO GALLERIES (photography.html)
+   The pop-up windows are now <button>s that open a shared gallery <dialog>.
+================================================== */
+
+/* make the pop-up buttons look exactly like the old links */
+button.popup {
+  display: block;
+  width: 100%;
+  margin: 0;
+  font: inherit;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+}
+button.popup .window-body,
+button.popup .thumb,
+button.popup .popup-open { display: block; }
+
+/* the gallery window */
+.gallery-dialog {
+  width: min(760px, 94vw);
+  max-width: none;
+  max-height: 94vh;
+  margin: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  overflow: visible;
+  color: #000;
+}
+.gallery-dialog::backdrop { background: rgba(60, 40, 80, 0.78); }
+
+.gallery-window {
+  padding: 3px;
+  background: var(--gray);
+  box-shadow: var(--bevel-out), 6px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+.gallery-window .wdot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+}
+.gallery-close { cursor: pointer; }
+.gallery-close:active { box-shadow: var(--bevel-in); }
+
+/* big photo with arrows on each side */
+.gallery-stage { position: relative; }
+
+.gallery-main {
+  display: block;
+  width: 100%;
+  height: min(58vh, 460px);
+  object-fit: contain;
+  background: linear-gradient(135deg, var(--purple), var(--navy));   /* shows while loading / if missing */
+  box-shadow: var(--bevel-in);
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 52px;
+  padding: 0;
+  border: none;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  background: var(--gray);
+  box-shadow: var(--bevel-out);
+  cursor: pointer;
+}
+.gallery-nav:hover { background: var(--gray-light); }
+.gallery-nav:active { box-shadow: var(--bevel-in); }
+.gallery-nav[hidden] { display: none; }
+.gallery-prev { left: 8px; }
+.gallery-next { right: 8px; }
+
+/* thumbnail strip */
+.gallery-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.gallery-thumbs[hidden] { display: none; }
+
+.gallery-thumb {
+  width: 64px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--purple), var(--navy));
+  box-shadow: var(--bevel-out);
+}
+.gallery-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery-thumb[aria-current="true"] { outline: 2px solid var(--purple); outline-offset: 1px; }
+.gallery-thumb:focus-visible { outline: 2px dotted #000; outline-offset: 2px; }
+
+/* counter + portfolio button */
+.gallery-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.gallery-counter { font-family: var(--font-mono); font-size: 12px; }
+
+body.gallery-open { overflow: hidden; }   /* stop the page scrolling behind the gallery */
+
+@media (max-width: 600px) {
+  .gallery-dialog { width: 96vw; }
+  .gallery-main { height: min(46vh, 360px); }
+  .gallery-nav { width: 32px; height: 46px; }
+  .gallery-window .wdot { width: 22px; height: 20px; font-size: 14px; }   /* easier to tap close */
+  .gallery-thumb { width: 52px; height: 40px; }
+  .gallery-footer .btn { flex: 1 1 100%; text-align: center; }
+}
